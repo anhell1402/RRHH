@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LaPiedad.RRHH.Clases", "LaPiedad.RRHH.Clases\LaPiedad.RRHH.Clases.vbproj", "{3306C3B1-44B3-4021-BD24-C09CE4084D14}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Piedad.MasterPS.DataAccess", "Piedad.MasterPS.DataAccess\Piedad.MasterPS.DataAccess.vbproj", "{76D18E9E-8117-4125-9319-EF9C6A5D5024}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3306C3B1-44B3-4021-BD24-C09CE4084D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3306C3B1-44B3-4021-BD24-C09CE4084D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3306C3B1-44B3-4021-BD24-C09CE4084D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
