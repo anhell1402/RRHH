@@ -77,4 +77,5 @@ Public Class EscolaridadBL
         End Try
         Return lst
     End Function
+
 End Class
