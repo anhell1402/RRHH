@@ -4,13 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3306C3B1-44B3-4021-BD24-C09CE4084D14}</ProjectGuid>
+    <ProjectGuid>{27D3C2FF-8698-474A-8B73-1554BFE6777B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LaPiedad.RRHH.Clases</RootNamespace>
-    <AssemblyName>LaPiedad.RRHH.Clases</AssemblyName>
+    <RootNamespace>LaPiedad.RRHH.Datos</RootNamespace>
+    <AssemblyName>LaPiedad.RRHH.Datos</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>LaPiedad.RRHH.Clases.xml</DocumentationFile>
+    <DocumentationFile>LaPiedad.RRHH.Datos.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>LaPiedad.RRHH.Clases.xml</DocumentationFile>
+    <DocumentationFile>LaPiedad.RRHH.Datos.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -64,8 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gral\TipoTelefono.vb" />
-    <Compile Include="Gral\TipoTelefonos.vb" />
+    <Compile Include="Gral\TipoTelefonoDA.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -81,30 +80,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Nom\ClavePago.vb" />
-    <Compile Include="Nom\ClavePagos.vb" />
-    <Compile Include="Nom\EstatusSalarioEmpleado.vb" />
-    <Compile Include="Nom\EstatusSemana.vb" />
-    <Compile Include="Nom\SalarioEmpleado.vb" />
-    <Compile Include="Nom\SalarioEmpleados.vb" />
-    <Compile Include="Nom\Semana.vb" />
-    <Compile Include="Nom\Semanas.vb" />
-    <Compile Include="RH\Escolaridad.vb" />
-    <Compile Include="RH\Escolaridades.vb" />
-    <Compile Include="RH\EstadoCivil.vb" />
-    <Compile Include="RH\EstadoCiviles.vb" />
-    <Compile Include="RH\EstatusEscolaridad.vb" />
-    <Compile Include="RH\EstatusEscolaridades.vb" />
-    <Compile Include="RH\Hijo.vb" />
-    <Compile Include="RH\Hijos.vb" />
-    <Compile Include="RH\NivelAcademico.vb" />
-    <Compile Include="RH\NivelAcademicos.vb" />
-    <Compile Include="RH\Padecimiento.vb" />
-    <Compile Include="RH\Padecimientos.vb" />
-    <Compile Include="RH\Pasatiempo.vb" />
-    <Compile Include="RH\Pasatiempos.vb" />
-    <Compile Include="RH\Sexo.vb" />
-    <Compile Include="RH\Sexos.vb" />
+    <Compile Include="Nom\ClavePagoDA.vb" />
+    <Compile Include="Nom\SalarioEmpleadoDA.vb" />
+    <Compile Include="Nom\SemanaDA.vb" />
+    <Compile Include="RH\EscolaridadDA.vb" />
+    <Compile Include="RH\EstadoCivilDA.vb" />
+    <Compile Include="RH\EstatusEscolaridadDA.vb" />
+    <Compile Include="RH\HijoDA.vb" />
+    <Compile Include="RH\NivelAcademicoDA.vb" />
+    <Compile Include="RH\PadecimientoDA.vb" />
+    <Compile Include="RH\PasatiempoDA.vb" />
+    <Compile Include="RH\SexoDA.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -125,6 +111,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LaPiedad.RRHH.Clases\LaPiedad.RRHH.Clases.vbproj">
+      <Project>{3306c3b1-44b3-4021-bd24-c09ce4084d14}</Project>
+      <Name>LaPiedad.RRHH.Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piedad.MasterPS.DataAccess\Piedad.MasterPS.DataAccess.vbproj">
+      <Project>{76d18e9e-8117-4125-9319-ef9c6a5d5024}</Project>
+      <Name>Piedad.MasterPS.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

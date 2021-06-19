@@ -7,6 +7,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LaPiedad.RRHH.Clases", "LaP
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Piedad.MasterPS.DataAccess", "Piedad.MasterPS.DataAccess\Piedad.MasterPS.DataAccess.vbproj", "{76D18E9E-8117-4125-9319-EF9C6A5D5024}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LaPiedad.RRHH.Datos", "LaPiedad.RRHH.Datos\LaPiedad.RRHH.Datos.vbproj", "{27D3C2FF-8698-474A-8B73-1554BFE6777B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LaPiedad.RRHH.Negocio", "LaPiedad.RRHH.Negocio\LaPiedad.RRHH.Negocio.vbproj", "{1D08D42F-EA11-4D1C-93DF-166FE857A380}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76D18E9E-8117-4125-9319-EF9C6A5D5024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D3C2FF-8698-474A-8B73-1554BFE6777B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D3C2FF-8698-474A-8B73-1554BFE6777B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D3C2FF-8698-474A-8B73-1554BFE6777B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D3C2FF-8698-474A-8B73-1554BFE6777B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D08D42F-EA11-4D1C-93DF-166FE857A380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D08D42F-EA11-4D1C-93DF-166FE857A380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D08D42F-EA11-4D1C-93DF-166FE857A380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D08D42F-EA11-4D1C-93DF-166FE857A380}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
