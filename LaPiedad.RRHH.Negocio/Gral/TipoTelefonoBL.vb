@@ -60,11 +60,11 @@ Public Class TipoTelefonoBL
         End Try
         Return tipo
     End Function
-    Public Function ObtenerTodos(ByVal tipo_ As TipoTelefono) As TipoTelefonos
+    Public Function ObtenerTodos() As TipoTelefonos
         Dim lst As New TipoTelefonos()
         Try
             Dim obj As New TipoTelefonoDA(cadenaConex)
-            lst = obj.ObtenerTodos(tipo_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

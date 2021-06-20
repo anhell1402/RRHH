@@ -80,7 +80,7 @@ Public Class TipoTelefonoDA
         End Try
         Return tipoTel
     End Function
-    Public Function ObtenerTodos(ByVal tipo_ As TipoTelefono) As TipoTelefonos
+    Public Function ObtenerTodos() As TipoTelefonos
         Dim lst As New TipoTelefonos()
         Try
             Using objDA As New ConexDB(cadenaConex)

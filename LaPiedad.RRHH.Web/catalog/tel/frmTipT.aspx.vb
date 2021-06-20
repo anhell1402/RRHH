@@ -1,0 +1,76 @@
+﻿Imports LaPiedad.RRHH.Clases
+Imports LaPiedad.RRHH.Negocio
+
+Public Class frmTipT
+    Inherits System.Web.UI.Page
+
+    Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'CodeBehind
+        If Not Page.IsPostBack Then 'Determinar si es la primera vez que se manda llamar la página
+            CargarDatos()
+        End If
+    End Sub
+    Public Sub CargarDatos()
+        rptDatos.DataSource = Nothing
+        rptDatos.DataBind()
+        Dim obj As New TipoTelefonoBL(cadena)
+        Dim lst As New TipoTelefonos()
+        lst = obj.ObtenerTodos()
+        rptDatos.DataSource = lst
+        rptDatos.DataBind()
+    End Sub
+    Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
+        Dim id As String = e.CommandArgument
+        Dim tipo As New TipoTelefono()
+        tipo.IdTipoTelefono = id
+        Dim obj As New TipoTelefonoBL(cadena)
+        If e.CommandName = "editacion" Then
+            tipo = obj.Obtener(tipo)
+            hfIdAccion.Value = id
+            txtDescripcion.Text = tipo.Descripcion
+            ModalPopupExtender1.Show()
+        Else
+            obj.Eliminar(tipo)
+            If Not obj.HayError Then
+                CargarDatos()
+            End If
+        End If
+    End Sub
+
+    Protected Sub btnGuardar_Click(sender As Object, e As EventArgs)
+        lblAviso.Visible = False
+        If txtDescripcion.Text.Trim() <> String.Empty Then
+            Dim tipo As New TipoTelefono()
+            Dim obj As New TipoTelefonoBL(cadena)
+            tipo.Descripcion = txtDescripcion.Text.Trim()
+            If hfIdAccion.Value = -1 Then
+                'alta
+                obj.Almacenar(tipo)
+            Else
+                'modificacion
+                tipo.IdTipoTelefono = hfIdAccion.Value
+                obj.Actualizar(tipo)
+
+            End If
+            If Not obj.HayError Then
+
+                ModalPopupExtender1.Hide()
+            End If
+        Else
+            lblAviso.Visible = True
+            lblAviso.Text = "La descripción es obligatoria"
+            ModalPopupExtender1.Show()
+        End If
+        CargarDatos()
+        ScriptManager.RegisterStartupScript(Me, GetType(Page), "jsKeys", "javascript:Forzar();", True)
+    End Sub
+
+    Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
+        ModalPopupExtender1.Show()
+    End Sub
+
+    Protected Sub btnClose_Click(sender As Object, e As EventArgs)
+        ModalPopupExtender1.Hide()
+    End Sub
+End Class
