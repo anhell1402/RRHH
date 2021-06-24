@@ -108,14 +108,26 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\frmLogin.aspx" />
+    <Content Include="catalog\nom\frmClaveP.aspx" />
     <Content Include="catalog\emp\frmEmpleado.aspx" />
+    <Content Include="catalog\nom\frmSalEmp.aspx" />
+    <Content Include="catalog\nom\frmSem.aspx" />
+    <Content Include="catalog\rh\frmEdoCivil.aspx" />
+    <Content Include="catalog\rh\frmEsco.aspx" />
+    <Content Include="catalog\rh\frmEstaEsco.aspx" />
+    <Content Include="catalog\rh\frmHijo.aspx" />
+    <Content Include="catalog\rh\frmNivelAcad.aspx" />
+    <Content Include="catalog\rh\frmPadec.aspx" />
+    <Content Include="catalog\rh\frmPasaTiem.aspx" />
+    <Content Include="catalog\rh\frmSex.aspx" />
     <Content Include="catalog\tel\frmTipT.aspx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="Default.aspx" />
-    <Content Include="frmTTel.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\1611162270_013847_1611162672_noticia_normal.jpg" />
+    <Content Include="img\Logo_RRHH.png" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="img\undraw_profile.svg" />
     <Content Include="img\undraw_profile_1.svg" />
@@ -1808,12 +1820,96 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\frmLogin.aspx.designer.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\frmLogin.aspx.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="catalog\nom\frmClaveP.aspx.designer.vb">
+      <DependentUpon>frmClaveP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\nom\frmClaveP.aspx.vb">
+      <DependentUpon>frmClaveP.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="catalog\emp\frmEmpleado.aspx.designer.vb">
       <DependentUpon>frmEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="catalog\emp\frmEmpleado.aspx.vb">
       <DependentUpon>frmEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\nom\frmSalEmp.aspx.designer.vb">
+      <DependentUpon>frmSalEmp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\nom\frmSalEmp.aspx.vb">
+      <DependentUpon>frmSalEmp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\nom\frmSem.aspx.designer.vb">
+      <DependentUpon>frmSem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\nom\frmSem.aspx.vb">
+      <DependentUpon>frmSem.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmEdoCivil.aspx.designer.vb">
+      <DependentUpon>frmEdoCivil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmEdoCivil.aspx.vb">
+      <DependentUpon>frmEdoCivil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmEsco.aspx.designer.vb">
+      <DependentUpon>frmEsco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmEsco.aspx.vb">
+      <DependentUpon>frmEsco.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmEstaEsco.aspx.designer.vb">
+      <DependentUpon>frmEstaEsco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmEstaEsco.aspx.vb">
+      <DependentUpon>frmEstaEsco.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmHijo.aspx.designer.vb">
+      <DependentUpon>frmHijo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmHijo.aspx.vb">
+      <DependentUpon>frmHijo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmNivelAcad.aspx.designer.vb">
+      <DependentUpon>frmNivelAcad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmNivelAcad.aspx.vb">
+      <DependentUpon>frmNivelAcad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmPadec.aspx.designer.vb">
+      <DependentUpon>frmPadec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmPadec.aspx.vb">
+      <DependentUpon>frmPadec.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmPasaTiem.aspx.designer.vb">
+      <DependentUpon>frmPasaTiem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmPasaTiem.aspx.vb">
+      <DependentUpon>frmPasaTiem.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\rh\frmSex.aspx.designer.vb">
+      <DependentUpon>frmSex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\rh\frmSex.aspx.vb">
+      <DependentUpon>frmSex.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="catalog\tel\frmTipT.aspx.designer.vb">
@@ -1828,13 +1924,6 @@
     </Compile>
     <Compile Include="Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="frmTTel.aspx.designer.vb">
-      <DependentUpon>frmTTel.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmTTel.aspx.vb">
-      <DependentUpon>frmTTel.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">

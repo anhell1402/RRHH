@@ -60,11 +60,11 @@ Public Class EscolaridadBL
         End Try
         Return esc
     End Function
-    Public Function ObtenerTodos(ByVal esc_ As Escolaridad) As Escolaridades
+    Public Function ObtenerTodos() As Escolaridades
         Dim lst As New Escolaridades()
         Try
             Dim obj As New EscolaridadDA(cadenaConex)
-            lst = obj.ObtenerTodos(esc_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

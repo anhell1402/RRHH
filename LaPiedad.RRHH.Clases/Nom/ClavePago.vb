@@ -19,4 +19,14 @@
             descripcion_ = value
         End Set
     End Property
+    Private idTipoPago_ As TipoPago
+    Public Property IdTipoPago As TipoPago
+        Get
+            Return idTipoPago_
+        End Get
+        Set(ByVal value As TipoPago)
+            idTipoPago_ = value
+        End Set
+    End Property
+
 End Class

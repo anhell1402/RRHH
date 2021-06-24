@@ -12,6 +12,7 @@ Public Class ClavePagoDA
             Using ObjDA As New ConexDB(cadenaConex)
                 ObjDA.CrearComando("nom.sp_clavePago_Alta")
                 ObjDA.AgregarParametro("@descripcion", clave_.Descripcion)
+                ObjDA.AgregarParametro("@idTipoPago", clave_.IdTipoPago)
                 ObjDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 ObjDA.EjecutaComando()
                 HayError = ObjDA.HayError
@@ -28,6 +29,7 @@ Public Class ClavePagoDA
                 ObjDA.CrearComando("nom.sp_clavePago_Actualizar")
                 ObjDA.AgregarParametro("@id", clave_.IdClave)
                 ObjDA.AgregarParametro("@descripcion", clave_.Descripcion)
+                ObjDA.AgregarParametro("@idTipoPago", clave_.IdTipoPago)
                 ObjDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 ObjDA.EjecutaComando()
                 HayError = ObjDA.HayError
@@ -79,7 +81,7 @@ Public Class ClavePagoDA
         End Try
         Return cl
     End Function
-    Public Function ObtenerTodos(ByVal clave_ As ClavePago) As ClavePagos
+    Public Function ObtenerTodos() As ClavePagos
         Dim lst As New ClavePagos()
         Try
             Using objDA As New ConexDB(cadenaConex)

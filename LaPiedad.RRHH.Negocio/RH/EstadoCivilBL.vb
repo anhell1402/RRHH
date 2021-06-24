@@ -60,11 +60,11 @@ Public Class EstadoCivilBL
         End Try
         Return edoC
     End Function
-    Public Function ObtenerTodos(ByVal edo_ As EstadoCivil) As EstadoCiviles
+    Public Function ObtenerTodos() As EstadoCiviles
         Dim lst As New EstadoCiviles()
         Try
             Dim obj As New EstadoCivilDA(cadenaConex)
-            lst = obj.ObtenerTodos(edo_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

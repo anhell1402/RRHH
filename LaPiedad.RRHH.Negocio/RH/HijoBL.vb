@@ -60,11 +60,11 @@ Public Class HijoBL
         End Try
         Return hijo_
     End Function
-    Public Function ObtenerTodos(ByVal hi_ As Hijo) As Hijos
+    Public Function ObtenerTodos() As Hijos
         Dim lst As New Hijos()
         Try
             Dim obj As New HijoDA(cadenaConex)
-            lst = obj.ObtenerTodos(hi_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

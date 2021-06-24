@@ -90,6 +90,7 @@
     <Compile Include="Nom\SalarioEmpleados.vb" />
     <Compile Include="Nom\Semana.vb" />
     <Compile Include="Nom\Semanas.vb" />
+    <Compile Include="Nom\TipoPago.vb" />
     <Compile Include="RH\Escolaridad.vb" />
     <Compile Include="RH\Escolaridades.vb" />
     <Compile Include="RH\EstadoCivil.vb" />

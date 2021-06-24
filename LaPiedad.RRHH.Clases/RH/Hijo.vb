@@ -34,7 +34,7 @@
         End Set
     End Property
     Private fechaNac_ As String
-    Public Property FechaNacimiento As String
+    Public Property FechaNac As String
         Get
             Return fechaNac_
         End Get

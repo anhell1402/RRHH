@@ -61,11 +61,11 @@ Public Class SexoBL
         End Try
         Return sex
     End Function
-    Public Function ObtenerTodos(ByVal sex_ As Sexo) As Sexos
+    Public Function ObtenerTodos() As Sexos
         Dim lst As New Sexos()
         Try
             Dim obj As New SexoDA(cadenaConex)
-            lst = obj.ObtenerTodos(sex_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

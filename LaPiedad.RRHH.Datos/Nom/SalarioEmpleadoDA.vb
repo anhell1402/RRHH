@@ -36,6 +36,7 @@ Public Class SalarioEmpleadoDA
                 objDA.AgregarParametro("@salario", sal_.Salario)
                 objDA.AgregarParametro("@idEstatusSalarioEmpleado", sal_.IdEstatusSalarioEmpleado)
                 objDA.AgregarParametro("@anio", sal_.Anio)
+                objDA.AgregarParametro("@fechaCreacion", sal_.FechaCreacion)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 objDA.EjecutaComando()
                 HayError = objDA.HayError
@@ -87,7 +88,7 @@ Public Class SalarioEmpleadoDA
         End Try
         Return sala
     End Function
-    Public Function ObtenerTodos(ByVal sal_ As SalarioEmpleado) As SalarioEmpleados
+    Public Function ObtenerTodos() As SalarioEmpleados
         Dim lst As New SalarioEmpleados()
         Try
             Using objDA As New ConexDB(cadenaConex)

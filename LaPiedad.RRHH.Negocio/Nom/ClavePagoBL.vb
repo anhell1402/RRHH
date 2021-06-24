@@ -62,11 +62,11 @@ Public Class ClavePagoBL
         Return cl
     End Function
 
-    Public Function ObtenerTodos(ByVal clave_ As ClavePago) As ClavePagos
+    Public Function ObtenerTodos() As ClavePagos
         Dim lst As New ClavePagos()
         Try
             Dim obj As New ClavePagoDA(cadenaConex)
-            lst = obj.ObtenerTodos(clave_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

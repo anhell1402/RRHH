@@ -60,11 +60,11 @@ Public Class PadecimientoBL
         End Try
         Return pade
     End Function
-    Public Function ObtenerTodos(ByVal pad_ As Padecimiento) As Padecimientos
+    Public Function ObtenerTodos() As Padecimientos
         Dim lst As New Padecimientos()
         Try
             Dim obj As New PadecimientoDA(cadenaConex)
-            lst = obj.ObtenerTodos(pad_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

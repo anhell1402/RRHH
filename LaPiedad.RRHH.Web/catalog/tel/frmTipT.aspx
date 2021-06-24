@@ -2,11 +2,6 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!-- Bootstrap -->   
-    <script src="<%= ResolveUrl("~/Scripts/jquery-3.6.0.min.js")%>"></script>
-    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-    <script src="<%= ResolveUrl("~/css/sb-admin-2.min.css")%>"></script>
-    <!-- Bootstrap -->
     <script type="text/javascript">        
         function Forzar() {
             __doPostBack('', '');            
@@ -65,9 +60,8 @@
     </asp:Panel>    
     <div class="container-fluid text-right">    
         <asp:Button ID="btnNuevo" runat="server" Text ="Nuevo tipo de telefono"  CssClass="btn btn-primary" />
+        <div class="mx-auto" style="height: 10px;"></div>
     </div>
-
- 
     <div class="card shadow mb-4">                       
         <div class="card-body">
             <div class="table-responsive">

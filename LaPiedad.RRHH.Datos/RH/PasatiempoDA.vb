@@ -79,7 +79,7 @@ Public Class PasatiempoDA
         End Try
         Return pasa
     End Function
-    Public Function ObtenerTodos(ByVal pas_ As Pasatiempo) As Pasatiempos
+    Public Function ObtenerTodos() As Pasatiempos
         Dim lst As New Pasatiempos()
         Try
             Using objDA As New ConexDB(cadenaConex)

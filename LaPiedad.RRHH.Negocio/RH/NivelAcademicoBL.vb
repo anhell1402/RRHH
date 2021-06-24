@@ -60,11 +60,11 @@ Public Class NivelAcademicoBL
         End Try
         Return nivel
     End Function
-    Public Function ObtenerTodos(ByVal nv_ As NivelAcademico) As NivelAcademicos
+    Public Function ObtenerTodos() As NivelAcademicos
         Dim lst As New NivelAcademicos()
         Try
             Dim obj As New NivelAcademicoDA(cadenaConex)
-            lst = obj.ObtenerTodos(nv_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

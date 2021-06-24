@@ -80,7 +80,7 @@ Public Class NivelAcademicoDA
         End Try
         Return nv
     End Function
-    Public Function ObtenerTodos(ByVal sal_ As NivelAcademico) As NivelAcademicos
+    Public Function ObtenerTodos() As NivelAcademicos
         Dim lst As New NivelAcademicos()
         Try
             Using objDA As New ConexDB(cadenaConex)

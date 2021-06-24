@@ -84,7 +84,7 @@ Public Class SemanaDA
         End Try
         Return sema
     End Function
-    Public Function ObtenerTodos(ByVal sal_ As Semana) As Semanas
+    Public Function ObtenerTodos() As Semanas
         Dim lst As New Semanas()
         Try
             Using objDA As New ConexDB(cadenaConex)

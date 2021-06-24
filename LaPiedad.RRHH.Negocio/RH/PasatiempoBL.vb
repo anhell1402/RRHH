@@ -60,11 +60,11 @@ Public Class PasatiempoBL
         End Try
         Return pasa
     End Function
-    Public Function ObtenerTodos(ByVal pas_ As Pasatiempo) As Pasatiempos
+    Public Function ObtenerTodos() As Pasatiempos
         Dim lst As New Pasatiempos()
         Try
             Dim obj As New PasatiempoDA(cadenaConex)
-            lst = obj.ObtenerTodos(pas_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

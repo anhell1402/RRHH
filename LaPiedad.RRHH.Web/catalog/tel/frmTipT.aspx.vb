@@ -39,6 +39,7 @@ Public Class frmTipT
     End Sub
 
     Protected Sub btnGuardar_Click(sender As Object, e As EventArgs)
+        Dim valida As Boolean = False
         lblAviso.Visible = False
         If txtDescripcion.Text.Trim() <> String.Empty Then
             Dim tipo As New TipoTelefono()
@@ -47,10 +48,12 @@ Public Class frmTipT
             If hfIdAccion.Value = -1 Then
                 'alta
                 obj.Almacenar(tipo)
+                valida = True
             Else
                 'modificacion
                 tipo.IdTipoTelefono = hfIdAccion.Value
                 obj.Actualizar(tipo)
+                valida = True
 
             End If
             If Not obj.HayError Then
@@ -62,8 +65,11 @@ Public Class frmTipT
             lblAviso.Text = "La descripción es obligatoria"
             ModalPopupExtender1.Show()
         End If
-        CargarDatos()
-        ScriptManager.RegisterStartupScript(Me, GetType(Page), "jsKeys", "javascript:Forzar();", True)
+        If valida Then
+            CargarDatos()
+            ScriptManager.RegisterStartupScript(Me, GetType(Page), "jsKeys", "javascript:Forzar();", True)
+        End If
+
     End Sub
 
     Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)

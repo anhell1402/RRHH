@@ -86,7 +86,7 @@ Public Class EscolaridadDA
         End Try
         Return escu
     End Function
-    Public Function ObtenerTodos(ByVal esc_ As Escolaridad) As Escolaridades
+    Public Function ObtenerTodos() As Escolaridades
         Dim lst As New Escolaridades()
         Try
             Using objDA As New ConexDB(cadenaConex)

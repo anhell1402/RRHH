@@ -13,7 +13,7 @@ Public Class HijoDA
                 objDA.CrearComando("rh.sp_hijo_Alta")
                 objDA.AgregarParametro("@idEmpleado", hijo_.IdEmpleado)
                 objDA.AgregarParametro("@nombreHijo", hijo_.NombreHijo)
-                objDA.AgregarParametro("@fechaNacimiento", hijo_.FechaNacimiento)
+                objDA.AgregarParametro("@fechaNacimiento", hijo_.FechaNac)
                 objDA.AgregarParametro("@observaciones", hijo_.Observaciones)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 objDA.EjecutaComando()
@@ -32,7 +32,7 @@ Public Class HijoDA
                 objDA.AgregarParametro("@id", hijo_.IdHijo)
                 objDA.AgregarParametro("@idEmpleado", hijo_.IdEmpleado)
                 objDA.AgregarParametro("@nombreHijo", hijo_.NombreHijo)
-                objDA.AgregarParametro("@fechaNacimiento", hijo_.FechaNacimiento)
+                objDA.AgregarParametro("@fechaNacimiento", hijo_.FechaNac)
                 objDA.AgregarParametro("@observaciones", hijo_.Observaciones)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 objDA.EjecutaComando()
@@ -85,7 +85,7 @@ Public Class HijoDA
         End Try
         Return hij
     End Function
-    Public Function ObtenerTodos(ByVal hi_ As Hijo) As Hijos
+    Public Function ObtenerTodos() As Hijos
         Dim lst As New Hijos()
         Try
             Using objDA As New ConexDB(cadenaConex)

@@ -60,11 +60,11 @@ Public Class SemanaBL
         End Try
         Return sema_
     End Function
-    Public Function ObtenerTodos(ByVal sem_ As Semana) As Semanas
+    Public Function ObtenerTodos() As Semanas
         Dim lst As New Semanas()
         Try
             Dim obj As New SemanaDA(cadenaConex)
-            lst = obj.ObtenerTodos(sem_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

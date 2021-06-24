@@ -60,11 +60,11 @@ Public Class EstatusEscolaridadBL
         End Try
         Return est
     End Function
-    Public Function ObtenerTodos(ByVal est_ As EstatusEscolaridad) As EstatusEscolaridades
+    Public Function ObtenerTodos() As EstatusEscolaridades
         Dim lst As New EstatusEscolaridades()
         Try
             Dim obj As New EstatusEscolaridadDA(cadenaConex)
-            lst = obj.ObtenerTodos(est_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

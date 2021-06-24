@@ -80,7 +80,7 @@ Public Class PadecimientoDA
         End Try
         Return pade
     End Function
-    Public Function ObtenerTodos(ByVal pad_ As Padecimiento) As Padecimientos
+    Public Function ObtenerTodos() As Padecimientos
         Dim lst As New Padecimientos()
         Try
             Using objDA As New ConexDB(cadenaConex)

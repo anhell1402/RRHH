@@ -61,11 +61,11 @@ Public Class SalarioEmpleadoBL
         End Try
         Return tipo
     End Function
-    Public Function ObtenerTodos(ByVal sal_ As SalarioEmpleado) As SalarioEmpleados
+    Public Function ObtenerTodos() As SalarioEmpleados
         Dim lst As New SalarioEmpleados()
         Try
             Dim obj As New SalarioEmpleadoDA(cadenaConex)
-            lst = obj.ObtenerTodos(sal_)
+            lst = obj.ObtenerTodos()
             If obj.HayError Then
                 lst = Nothing
             End If

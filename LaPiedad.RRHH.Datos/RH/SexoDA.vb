@@ -79,7 +79,7 @@ Public Class SexoDA
         End Try
         Return sexo_
     End Function
-    Public Function ObtenerTodos(ByVal sex_ As Sexo) As Sexos
+    Public Function ObtenerTodos() As Sexos
         Dim lst As New Sexos()
         Try
             Using objDA As New ConexDB(cadenaConex)
