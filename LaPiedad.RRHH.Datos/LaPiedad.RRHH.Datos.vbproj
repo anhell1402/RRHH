@@ -65,6 +65,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\estatusUsuarioDA.vb" />
+    <Compile Include="Config\menuDA.vb" />
+    <Compile Include="Config\rolDA.vb" />
     <Compile Include="Config\UsuarioDA.vb" />
     <Compile Include="Gral\TipoTelefonoDA.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

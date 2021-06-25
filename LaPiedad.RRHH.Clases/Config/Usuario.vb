@@ -1,4 +1,8 @@
 ﻿Public Class Usuario
+    Public Sub New()
+        idEstatusUsuario_ = New estatusUsuario()
+        idRol_ = New rol()
+    End Sub
 
     Private idUsuario_ As Integer
     Public Property IdUsuario As Integer
@@ -54,21 +58,21 @@
             passwrd_ = value
         End Set
     End Property
-    Private idEstatus_ As Integer
-    Public Property IdEstatusUsuario As Integer
+    Private idEstatusUsuario_ As estatusUsuario
+    Public Property IdEstatusUsuario As estatusUsuario
         Get
-            Return idEstatus_
+            Return idEstatusUsuario_
         End Get
-        Set(ByVal value As Integer)
-            idEstatus_ = value
+        Set(ByVal value As estatusUsuario)
+            idEstatusUsuario_ = value
         End Set
     End Property
-    Private idRol_ As Integer
-    Public Property IdRol As Integer
+    Private idRol_ As rol
+    Public Property IdRol As rol
         Get
             Return idRol_
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As rol)
             idRol_ = value
         End Set
     End Property

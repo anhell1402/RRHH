@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\frmLogin.aspx" />
-    <Content Include="Account\frmRegistro.aspx" />
+    <Content Include="Account\frmRegister.aspx" />
     <Content Include="catalog\nom\frmClaveP.aspx" />
     <Content Include="catalog\emp\frmEmpleado.aspx" />
     <Content Include="catalog\nom\frmSalEmp.aspx" />
@@ -1828,11 +1828,11 @@
       <DependentUpon>frmLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Account\frmRegistro.aspx.designer.vb">
-      <DependentUpon>frmRegistro.aspx</DependentUpon>
+    <Compile Include="Account\frmRegister.aspx.designer.vb">
+      <DependentUpon>frmRegister.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\frmRegistro.aspx.vb">
-      <DependentUpon>frmRegistro.aspx</DependentUpon>
+    <Compile Include="Account\frmRegister.aspx.vb">
+      <DependentUpon>frmRegister.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.vb" />
