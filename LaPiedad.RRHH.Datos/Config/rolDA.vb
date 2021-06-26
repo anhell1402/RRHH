@@ -1,6 +1,6 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports Piedad.MasterPS.DataAccess
-Public Class rolDA
+Public Class RolDA
     Public Property HayError As Boolean
     Public Property MensajeError As String
     Private cadenaConex As String
@@ -8,7 +8,7 @@ Public Class rolDA
         cadenaConex = cadenaConexion
     End Sub
 
-    Public Sub Almacenar(ByVal rl_ As rol)
+    Public Sub Almacenar(ByVal rl_ As Rol)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_rol_Alta")
@@ -23,7 +23,7 @@ Public Class rolDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Sub Actualizar(ByVal rl_ As rol)
+    Public Sub Actualizar(ByVal rl_ As Rol)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_rol_Actualizar")
@@ -39,7 +39,7 @@ Public Class rolDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Sub Eliminar(ByVal rl_ As rol)
+    Public Sub Eliminar(ByVal rl_ As Rol)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_rol_Eliminar")
@@ -54,17 +54,17 @@ Public Class rolDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Function Obtener(ByVal rl_ As rol) As rol
-        Dim rol As rol = Nothing
-        Dim lst As List(Of rol)
+    Public Function Obtener(ByVal rl_ As Rol) As Rol
+        Dim rol As Rol = Nothing
+        Dim lst As List(Of Rol)
         Try
             Using ObjDA As New ConexDB(cadenaConex)
                 ObjDA.CrearComando("conf.sp_rol_Obtener")
                 ObjDA.AgregarParametro("@id", rl_.IdRol)
                 ObjDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-                lst = ObjDA.ObtenerResultados(Of rol)()
+                lst = ObjDA.ObtenerResultados(Of Rol)()
                 If Not ObjDA.HayError Then
-                    rol = New rol()
+                    rol = New Rol()
                     rol = lst(0)
                 Else
                     rol = Nothing
@@ -80,16 +80,16 @@ Public Class rolDA
         End Try
         Return rol
     End Function
-    Public Function ObtenerTodos() As roles
-        Dim lst As New roles()
+    Public Function ObtenerTodos() As Roles
+        Dim lst As New Roles()
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_rol_ObtenerTodos")
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-                Dim lista As New List(Of rol)
-                lista = objDA.ObtenerResultados(Of rol)()
+                Dim lista As New List(Of Rol)
+                lista = objDA.ObtenerResultados(Of Rol)()
                 If Not objDA.HayError Then
-                    For Each rol As rol In lista
+                    For Each rol As Rol In lista
                         lst.Add(rol)
                     Next
                 Else

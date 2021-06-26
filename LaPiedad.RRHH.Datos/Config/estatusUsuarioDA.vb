@@ -1,6 +1,6 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports Piedad.MasterPS.DataAccess
-Public Class estatusUsuarioDA
+Public Class EstatusUsuarioDA
     Public Property HayError As Boolean
     Public Property MensajeError As String
     Private cadenaConex As String
@@ -8,7 +8,7 @@ Public Class estatusUsuarioDA
         cadenaConex = cadenaConexion
     End Sub
 
-    Public Sub Almacenar(ByVal edo_ As estatusUsuario)
+    Public Sub Almacenar(ByVal edo_ As EstatusUsuario)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_estatusUsuario_Alta")
@@ -23,7 +23,7 @@ Public Class estatusUsuarioDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Sub Actualizar(ByVal edo_ As estatusUsuario)
+    Public Sub Actualizar(ByVal edo_ As EstatusUsuario)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_estatusUsuario_Actualizar")
@@ -39,7 +39,7 @@ Public Class estatusUsuarioDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Sub Eliminar(ByVal edo_ As estatusUsuario)
+    Public Sub Eliminar(ByVal edo_ As EstatusUsuario)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_estatusUsuario_Eliminar")
@@ -54,17 +54,17 @@ Public Class estatusUsuarioDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Function Obtener(ByVal edo_ As estatusUsuario) As estatusUsuario
-        Dim edoU As estatusUsuario = Nothing
-        Dim lst As List(Of estatusUsuario)
+    Public Function Obtener(ByVal edo_ As EstatusUsuario) As EstatusUsuario
+        Dim edoU As EstatusUsuario = Nothing
+        Dim lst As List(Of EstatusUsuario)
         Try
             Using ObjDA As New ConexDB(cadenaConex)
                 ObjDA.CrearComando("conf.sp_estatusUsuario_Obtener")
                 ObjDA.AgregarParametro("@id", edo_.IdEstatusUsuario)
                 ObjDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-                lst = ObjDA.ObtenerResultados(Of estatusUsuario)()
+                lst = ObjDA.ObtenerResultados(Of EstatusUsuario)()
                 If Not ObjDA.HayError Then
-                    edoU = New estatusUsuario()
+                    edoU = New EstatusUsuario()
                     edoU = lst(0)
                 Else
                     edoU = Nothing
@@ -80,16 +80,16 @@ Public Class estatusUsuarioDA
         End Try
         Return edoU
     End Function
-    Public Function ObtenerTodos() As estatusUsuarios
-        Dim lst As New estatusUsuarios()
+    Public Function ObtenerTodos() As EstatusUsuarios
+        Dim lst As New EstatusUsuarios()
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_estatusUsuario_ObtenerTodos")
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-                Dim lista As New List(Of estatusUsuario)
-                lista = objDA.ObtenerResultados(Of estatusUsuario)()
+                Dim lista As New List(Of EstatusUsuario)
+                lista = objDA.ObtenerResultados(Of EstatusUsuario)()
                 If Not objDA.HayError Then
-                    For Each edo As estatusUsuario In lista
+                    For Each edo As EstatusUsuario In lista
                         lst.Add(edo)
                     Next
                 Else

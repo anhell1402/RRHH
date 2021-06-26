@@ -1,4 +1,4 @@
-﻿Public Class estatusUsuario
+﻿Public Class EstatusUsuario
 
     Private idEstatusUsuario_ As Integer
     Public Property IdEstatusUsuario As Integer

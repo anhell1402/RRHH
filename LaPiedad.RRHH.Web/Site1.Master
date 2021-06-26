@@ -60,6 +60,30 @@
                 Interface
             </div>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Catálogos</span>
+                </a>
+                <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Nómina</h6>
+                        <a class="collapse-item" href="buttons.html">Claves de pago</a>
+                        <a class="collapse-item" href="cards.html">Salario de Empleado</a>
+                        <a class="collapse-item" href="cards.html">Semana</a>
+
+                        <h6 class="collapse-header">RRHH</h6>
+                        <a class="collapse-item" href="buttons.html">Estado Civil</a>                        
+                        <a class="collapse-item" href="cards.html">Nivel Académico</a>
+                        <a class="collapse-item" href="cards.html">Padecimientos</a>
+                        <a class="collapse-item" href="cards.html">Pasatiempos</a>
+                        <a class="collapse-item" href="cards.html">Sexo</a>
+                    </div>
+                </div>
+
+            </li>
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
