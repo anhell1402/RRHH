@@ -1,9 +1,10 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
-Public Class frmRol
+Public Class frmEstatusUsuario
     Inherits System.Web.UI.Page
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'CodeBehind
         If Not Page.IsPostBack Then 'Determinar si es la primera vez que se manda llamar la página
             CargarDatos()
         End If
@@ -11,24 +12,24 @@ Public Class frmRol
     Public Sub CargarDatos()
         rptDatos.DataSource = Nothing
         rptDatos.DataBind()
-        Dim obj As New RolBL(cadena)
-        Dim lst As New Roles()
+        Dim obj As New EstatusUsuarioBL(cadena)
+        Dim lst As New EstatusUsuarios()
         lst = obj.ObtenerTodos()
         rptDatos.DataSource = lst
         rptDatos.DataBind()
     End Sub
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument
-        Dim rl As New Rol()
-        rl.IdRol = id
-        Dim obj As New RolBL(cadena)
+        Dim edo As New EstatusUsuario()
+        edo.IdEstatusUsuario = id
+        Dim obj As New EstatusUsuarioBL(cadena)
         If e.CommandName = "editacion" Then
-            rl = obj.Obtener(rl)
+            edo = obj.Obtener(edo)
             hfIdAccion.Value = id
-            txtDescripcion.Text = rl.Descripcion
+            txtDescripcion.Text = edo.Descripcion
             ModalPopupExtender1.Show()
         Else
-            obj.Eliminar(rl)
+            obj.Eliminar(edo)
             If Not obj.HayError Then
                 CargarDatos()
             End If
@@ -39,17 +40,17 @@ Public Class frmRol
         Dim valida As Boolean = False
         lblAviso.Visible = False
         If txtDescripcion.Text.Trim() <> String.Empty Then
-            Dim rl As New Rol()
-            Dim obj As New RolBL(cadena)
-            rl.Descripcion = txtDescripcion.Text.Trim()
+            Dim edo As New EstatusUsuario()
+            Dim obj As New EstatusUsuarioBL(cadena)
+            edo.Descripcion = txtDescripcion.Text.Trim()
             If hfIdAccion.Value = -1 Then
                 'alta
-                obj.Almacenar(rl)
+                obj.Almacenar(edo)
                 valida = True
             Else
                 'modificacion
-                rl.IdRol = hfIdAccion.Value
-                obj.Actualizar(rl)
+                edo.IdEstatusUsuario = hfIdAccion.Value
+                obj.Actualizar(edo)
                 valida = True
 
             End If
@@ -76,5 +77,4 @@ Public Class frmRol
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
         ModalPopupExtender1.Hide()
     End Sub
-
 End Class
