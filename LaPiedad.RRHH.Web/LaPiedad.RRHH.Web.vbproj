@@ -1839,6 +1839,9 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="catalog\conf\frmEstatusUsuario.aspx.designer.vb">
       <DependentUpon>frmEstatusUsuario.aspx</DependentUpon>
     </Compile>
@@ -1944,6 +1947,7 @@
       <DependentUpon>frmTipT.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Classes\SesionVars.vb" />
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
@@ -2213,6 +2217,10 @@
     <ProjectReference Include="..\LaPiedad.RRHH.Negocio\LaPiedad.RRHH.Negocio.vbproj">
       <Project>{1d08d42f-ea11-4d1c-93df-166fe857a380}</Project>
       <Name>LaPiedad.RRHH.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piedad.MasterPS.Utilerias\Piedad.MasterPS.Utilerias.vbproj">
+      <Project>{a2926c08-6d04-4580-b9dd-8fce389ab5a6}</Project>
+      <Name>Piedad.MasterPS.Utilerias</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

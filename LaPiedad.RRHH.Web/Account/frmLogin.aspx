@@ -23,7 +23,7 @@
   
 </head>
    <body class="bg-gradient-primary">
-       <form runat="server">
+       
     <div class="container">
 
         <!-- Outer Row -->
@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Inicio de Sesión</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" runat="server">
                                         <div class="form-group">
                                             <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control form-control-user"
                                                 placeholder="Usuario..."></asp:TextBox>
@@ -104,6 +104,6 @@
     <!-- Custom scripts for all pages-->
     <script src="<%=ResolveUrl("~/js/sb-admin-2.min.js")%>"></script>
 
-    </form>
+   
 </body>
 </html>

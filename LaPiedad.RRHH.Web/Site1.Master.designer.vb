@@ -122,6 +122,24 @@ Partial Public Class Site1
     Protected WithEvents mnDBO_TipoTel As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
+    '''Control mnConfiguracion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents mnConfiguracion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control mnConf_Rol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents mnConf_Rol As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''Control lblUsuario.
     '''</summary>
     '''<remarks>

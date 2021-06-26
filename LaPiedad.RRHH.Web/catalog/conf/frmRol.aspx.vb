@@ -1,7 +1,7 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
 Public Class frmRol
-    Inherits System.Web.UI.Page
+    Inherits BasePage
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then 'Determinar si es la primera vez que se manda llamar la página
@@ -16,6 +16,12 @@ Public Class frmRol
         lst = obj.ObtenerTodos()
         rptDatos.DataSource = lst
         rptDatos.DataBind()
+
+        ddl.DataSource = lst
+        ddl.DataTextField = "Descripcion" 'lo que ve el usuario
+        ddl.DataValueField = "IdRol" 'lo que ve el código
+        ddl.DataBind()
+
     End Sub
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument
@@ -77,4 +83,7 @@ Public Class frmRol
         ModalPopupExtender1.Hide()
     End Sub
 
+    Private Sub frmRol_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
+        Acceso(10)
+    End Sub
 End Class
