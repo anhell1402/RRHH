@@ -50,7 +50,7 @@
         End Set
     End Property
     Private passwrd_ As String
-    Public Property Contra As String
+    Public Property Passwd As String
         Get
             Return passwrd_
         End Get
@@ -58,23 +58,32 @@
             passwrd_ = value
         End Set
     End Property
-    Private idEstatusUsuario_ As estatusUsuario
-    Public Property IdEstatusUsuario As estatusUsuario
+    Private idEstatusUsuario_ As EstatusUsuario
+    Public Property IdEstatusUsuario As EstatusUsuario
         Get
             Return idEstatusUsuario_
         End Get
-        Set(ByVal value As estatusUsuario)
+        Set(ByVal value As EstatusUsuario)
             idEstatusUsuario_ = value
         End Set
     End Property
-    Private idRol_ As rol
-    Public Property IdRol As rol
+    Private idRol_ As Rol
+    Public Property IdRol As Rol
         Get
             Return idRol_
         End Get
-        Set(ByVal value As rol)
+        Set(ByVal value As Rol)
             idRol_ = value
         End Set
     End Property
-
+    Public WriteOnly Property SetIdRol As Integer
+        Set(value As Integer)
+            idRol_.IdRol = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdEstatusUsuario As Integer
+        Set(value As Integer)
+            idEstatusUsuario_.IdEstatusUsuario = value
+        End Set
+    End Property
 End Class

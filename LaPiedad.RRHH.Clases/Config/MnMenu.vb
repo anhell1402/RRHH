@@ -28,5 +28,5 @@
         End Set
     End Property
     Public Property NomControl As String
-
+    Public Property NomPadre As String
 End Class

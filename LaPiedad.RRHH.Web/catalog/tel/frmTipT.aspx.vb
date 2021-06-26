@@ -2,7 +2,7 @@
 Imports LaPiedad.RRHH.Negocio
 
 Public Class frmTipT
-    Inherits System.Web.UI.Page
+    Inherits BasePage
 
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -78,5 +78,9 @@ Public Class frmTipT
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
         ModalPopupExtender1.Hide()
+    End Sub
+
+    Private Sub frmTipT_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
+        Acceso(9)
     End Sub
 End Class

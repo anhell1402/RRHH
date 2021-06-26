@@ -1,7 +1,7 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
 Public Class frmEsco
-    Inherits System.Web.UI.Page
+    Inherits BasePage
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'CodeBehind

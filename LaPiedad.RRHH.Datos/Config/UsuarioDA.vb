@@ -15,7 +15,7 @@ Public Class UsuarioDA
                 objDA.AgregarParametro("@paterno", usu_.Paterno)
                 objDA.AgregarParametro("@materno", usu_.Materno)
                 objDA.AgregarParametro("@userName", usu_.NombreUsuario)
-                objDA.AgregarParametro("@pass", usu_.Contra)
+                objDA.AgregarParametro("@pass", usu_.Passwd)
                 objDA.AgregarParametro("@idEstatus", usu_.IdEstatusUsuario)
                 objDA.AgregarParametro("@idRol", usu_.IdRol)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
@@ -37,7 +37,7 @@ Public Class UsuarioDA
                 objDA.AgregarParametro("@paterno", usu_.Paterno)
                 objDA.AgregarParametro("@materno", usu_.Materno)
                 objDA.AgregarParametro("@userName", usu_.NombreUsuario)
-                objDA.AgregarParametro("@pass", usu_.Contra)
+                objDA.AgregarParametro("@pass", usu_.Passwd)
                 objDA.AgregarParametro("@idEstatus", usu_.IdEstatusUsuario)
                 objDA.AgregarParametro("@idRol", usu_.IdRol)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
@@ -114,6 +114,59 @@ Public Class UsuarioDA
             lst = Nothing
             HayError = True
             MensajeError = ex.Message
+        End Try
+        Return lst
+    End Function
+    Public Function Autenticar(ByVal usr As Usuario) As Usuario
+        Try
+            Using ObjDA As New ConexDB(cadenaConex)
+                ObjDA.CrearComando("conf.sp_AutenticaUsuario")
+                ObjDA.AgregarParametro("@usrname", usr.NombreUsuario)
+                ObjDA.AgregarParametro("@passwd", usr.Passwd)
+                ObjDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+                Dim lst As New List(Of Usuario)
+                lst = ObjDA.ObtenerResultados(Of Usuario)()
+                If Not ObjDA.HayError Then
+                    usr = lst(0)
+                Else
+                    usr = Nothing
+                    HayError = ObjDA.HayError
+                    MensajeError = ObjDA.MensajeError
+                End If
+                HayError = ObjDA.HayError
+            End Using
+        Catch ex As Exception
+            usr = Nothing
+            HayError = True
+            MensajeError = ex.Message
+        End Try
+        Return usr
+    End Function
+
+    Public Function ObtenerMenu(ByVal usr As Usuario) As MnMenus
+        Dim lst As MnMenus = Nothing
+        Try
+            Using obj As New ConexDB(cadenaConex)
+                obj.CrearComando("conf.sp_ObtenerMenuPermisos")
+                obj.AgregarParametro("@idUsuario", usr.IdUsuario)
+                obj.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+                Dim lista As New List(Of MnMenu)
+                lista = obj.ObtenerResultados(Of MnMenu)()
+                If (Not obj.HayError) Then
+                    lst = New MnMenus()
+                    For Each mn As MnMenu In lista
+                        lst.Add(mn)
+                    Next
+                Else
+                    lst = Nothing
+                    HayError = True
+                    MensajeError = obj.MensajeError
+                End If
+            End Using
+        Catch ex As Exception
+            HayError = True
+            MensajeError = ex.Message
+            lst = Nothing
         End Try
         Return lst
     End Function

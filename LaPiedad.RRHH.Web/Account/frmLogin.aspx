@@ -23,7 +23,7 @@
   
 </head>
    <body class="bg-gradient-primary">
-
+       <form runat="server">
     <div class="container">
 
         <!-- Outer Row -->
@@ -43,38 +43,45 @@
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control form-control-user"
+                                                placeholder="Usuario..."></asp:TextBox>
+                                            <%--<input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Correo Electrónico..." />
+                                                placeholder="Correo Electrónico..." />--%>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Contraseña..." />
+                                            <%--<input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Contraseña..." />--%>
+                                            <asp:TextBox ID="txtPasswd" runat="server" CssClass="form-control form-control-user"
+                                                placeholder="Contraseña..." TextMode="Password"></asp:TextBox>
                                         </div>
-                                        <div class="form-group">
+                                        <%--<div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck" />
                                                 <label class="custom-control-label" for="customCheck">Recordarme</label>
                                             </div>
-                                        </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        </div>--%>
+                                        <%--<a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Iniciar Sesión
-                                        </a>
+                                        </a>--%>
+                                        <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary btn-user btn-block" Text="Iniciar Sesión"
+                                            OnClick="btnLogin_Click" />
                                         <hr />
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                        <asp:Label ID="lblAviso" runat="server" CssClass="alert alert-danger" Visible="false"></asp:Label>
+                                        <%--<a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Iniciar con Google
                                         </a>
                                         <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> Iniciar con Facebook
-                                        </a>
+                                        </a>--%>
                                     </form>
                                     <hr />
-                                    <div class="text-center">
+                                    <%--<div class="text-center">
                                         <a class="small" href="forgot-password.html">¿Olvidaste tu Contraseña?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Crear Cuenta!</a>
-                                    </div>
+                                    </div>--%>
                                 </div>
                             </div>
                         </div>
@@ -96,5 +103,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<%=ResolveUrl("~/js/sb-admin-2.min.js")%>"></script>
+
+    </form>
 </body>
 </html>
