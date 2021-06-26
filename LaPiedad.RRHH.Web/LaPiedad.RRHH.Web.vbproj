@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="Account\frmLogin.aspx" />
     <Content Include="Account\frmRegister.aspx" />
+    <Content Include="catalog\conf\frmRol.aspx" />
     <Content Include="catalog\nom\frmClaveP.aspx" />
     <Content Include="catalog\emp\frmEmpleado.aspx" />
     <Content Include="catalog\nom\frmSalEmp.aspx" />
@@ -1836,6 +1837,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="catalog\conf\frmRol.aspx.designer.vb">
+      <DependentUpon>frmRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\conf\frmRol.aspx.vb">
+      <DependentUpon>frmRol.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="catalog\nom\frmClaveP.aspx.designer.vb">
       <DependentUpon>frmClaveP.aspx</DependentUpon>
     </Compile>
