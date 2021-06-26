@@ -94,7 +94,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <%--<h6 class="collapse-header">Nómina</h6>--%>
                         <a class="collapse-item" href="~/catalog/conf/frmRol.aspx" runat="server" visible="false" id="mnConf_Rol">Roles</a>
-                        
+                        1nfr4mund0
 
                         
                     </div>
