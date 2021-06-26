@@ -66,9 +66,9 @@
                                 </div>
                                 <div class="col-8">
                                   <asp:DropDownList  ID="ddlEstaSem" runat="server" CssClass="form-control">
-                                    <asp:ListItem Value="0">-Seleccione-</asp:ListItem>
+                                    <%--<asp:ListItem Value="0">-Seleccione-</asp:ListItem>
                                     <asp:ListItem Value="1">Activo</asp:ListItem>
-                                    <asp:ListItem Value="2">Incativo</asp:ListItem>
+                                    <asp:ListItem Value="2">Incativo</asp:ListItem>--%>
                                   </asp:DropDownList>
                                 </div>
                             </div>

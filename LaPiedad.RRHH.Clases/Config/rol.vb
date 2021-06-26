@@ -1,4 +1,4 @@
-﻿Public Class rol
+﻿Public Class Rol
     Private idRol_ As Integer
     Public Property IdRol As Integer
         Get

@@ -17,6 +17,12 @@ Public Class Sem
         lst = obj.ObtenerTodos()
         rptDatos.DataSource = lst
         rptDatos.DataBind()
+        Dim item As New ListItem("Seleccione", "0")
+        ddlEstaSem.Items.Add(item)
+        item = New ListItem("Vigente", "1")
+        ddlEstaSem.Items.Add(item)
+        item = New ListItem("Historial", "2")
+        ddlEstaSem.Items.Add(item)
     End Sub
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument

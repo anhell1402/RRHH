@@ -1,13 +1,13 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports Piedad.MasterPS.DataAccess
-Public Class menuDA
+Public Class MenuDA
     Public Property HayError As Boolean
     Public Property MensajeError As String
     Private cadenaConex As String
     Public Sub New(ByVal cadenaConexion As String)
         cadenaConex = cadenaConexion
     End Sub
-    Public Sub Almacenar(ByVal menu_ As menu)
+    Public Sub Almacenar(ByVal menu_ As MnMenu)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_menu_Alta")
@@ -23,7 +23,7 @@ Public Class menuDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Sub Actualizar(ByVal menu_ As menu)
+    Public Sub Actualizar(ByVal menu_ As MnMenu)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_menu_Actualizar")
@@ -40,7 +40,7 @@ Public Class menuDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Sub Eliminar(ByVal menu_ As menu)
+    Public Sub Eliminar(ByVal menu_ As MnMenu)
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_menu_Eliminar")
@@ -55,17 +55,17 @@ Public Class menuDA
             MensajeError = ex.Message
         End Try
     End Sub
-    Public Function Obtener(ByVal menu_ As menu) As menu
-        Dim men As menu = Nothing
-        Dim lst As List(Of menu)
+    Public Function Obtener(ByVal menu_ As MnMenu) As MnMenu
+        Dim men As MnMenu = Nothing
+        Dim lst As List(Of MnMenu)
         Try
             Using ObjDA As New ConexDB(cadenaConex)
                 ObjDA.CrearComando("conf.sp_menu_Obtener")
                 ObjDA.AgregarParametro("@id", menu_.IdMenu)
                 ObjDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-                lst = ObjDA.ObtenerResultados(Of menu)()
+                lst = ObjDA.ObtenerResultados(Of MnMenu)()
                 If Not ObjDA.HayError Then
-                    men = New menu()
+                    men = New MnMenu()
                     men = lst(0)
                 Else
                     men = Nothing
@@ -81,16 +81,16 @@ Public Class menuDA
         End Try
         Return men
     End Function
-    Public Function ObtenerTodos() As menus
-        Dim lst As New menus()
+    Public Function ObtenerTodos() As MnMenus
+        Dim lst As New MnMenus()
         Try
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("conf.sp_menu_ObtenerTodos")
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-                Dim lista As New List(Of menu)
-                lista = objDA.ObtenerResultados(Of menu)()
+                Dim lista As New List(Of MnMenu)
+                lista = objDA.ObtenerResultados(Of MnMenu)()
                 If Not objDA.HayError Then
-                    For Each men As menu In lista
+                    For Each men As MnMenu In lista
                         lst.Add(men)
                     Next
                 Else

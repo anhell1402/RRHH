@@ -65,12 +65,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\estatusUsuario.vb" />
-    <Compile Include="Config\estatusUsuarios.vb" />
-    <Compile Include="Config\menu.vb" />
-    <Compile Include="Config\menus.vb" />
-    <Compile Include="Config\rol.vb" />
-    <Compile Include="Config\roles.vb" />
+    <Compile Include="Config\EstatusUsuario.vb" />
+    <Compile Include="Config\EstatusUsuarios.vb" />
+    <Compile Include="Config\MnMenu.vb" />
+    <Compile Include="Config\MnMenus.vb" />
+    <Compile Include="Config\Rol.vb" />
+    <Compile Include="Config\Roles.vb" />
     <Compile Include="Config\Usuario.vb" />
     <Compile Include="Config\Usuarios.vb" />
     <Compile Include="Gral\TipoTelefono.vb" />
