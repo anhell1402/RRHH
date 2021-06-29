@@ -16,8 +16,7 @@ Public Class UsuarioDA
                 objDA.AgregarParametro("@materno", usu_.Materno)
                 objDA.AgregarParametro("@userName", usu_.NombreUsuario)
                 objDA.AgregarParametro("@pass", usu_.Passwd)
-                objDA.AgregarParametro("@idEstatus", usu_.IdEstatusUsuario)
-                objDA.AgregarParametro("@idRol", usu_.IdRol)
+                objDA.AgregarParametro("@idRol", usu_.IdRol.IdRol)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 objDA.EjecutaComando()
                 HayError = objDA.HayError
@@ -38,8 +37,8 @@ Public Class UsuarioDA
                 objDA.AgregarParametro("@materno", usu_.Materno)
                 objDA.AgregarParametro("@userName", usu_.NombreUsuario)
                 objDA.AgregarParametro("@pass", usu_.Passwd)
-                objDA.AgregarParametro("@idEstatus", usu_.IdEstatusUsuario)
-                objDA.AgregarParametro("@idRol", usu_.IdRol)
+                objDA.AgregarParametro("@idEstatusUsuario", usu_.IdEstatusUsuario.IdEstatusUsuario)
+                objDA.AgregarParametro("@idRol", usu_.IdRol.IdRol)
                 objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 objDA.EjecutaComando()
                 HayError = objDA.HayError

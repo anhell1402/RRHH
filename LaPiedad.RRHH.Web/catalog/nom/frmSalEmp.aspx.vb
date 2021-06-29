@@ -18,6 +18,7 @@ Public Class frmSalEmp
         rptDatos.DataSource = lst
         rptDatos.DataBind()
     End Sub
+
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument
         Dim idSal As New SalarioEmpleado()
@@ -28,7 +29,7 @@ Public Class frmSalEmp
             hfIdAccion.Value = id
             ddlEmpleado.SelectedValue = idSal.IdEmpleado
             txtSalario.Text = idSal.Salario
-            ddlEstSal.SelectedValue = idSal.IdEstatusSalarioEmpleado
+            ddlEstSalEmp.SelectedValue = idSal.IdEstatusSalarioEmpleado
             txtAnio.Text = idSal.Anio
             txtFechaCreacion.Text = idSal.FechaCreacion
             ModalPopupExtender1.Show()
@@ -43,13 +44,13 @@ Public Class frmSalEmp
     Protected Sub btnGuardar_Click(sender As Object, e As EventArgs)
         Dim valida As Boolean = False
         lblAviso.Visible = False
-        If ddlEmpleado.SelectedValue <> 0 And txtSalario.Text.Trim() <> String.Empty And ddlEstSal.SelectedValue <> 0 And
+        If ddlEmpleado.SelectedValue <> 0 And txtSalario.Text.Trim() <> String.Empty And ddlEstSalEmp.SelectedValue <> 0 And
             txtAnio.Text.Trim() <> String.Empty And txtFechaCreacion.Text.Trim() <> String.Empty Then
             Dim idSuc As New SalarioEmpleado()
             Dim obj As New SalarioEmpleadoBL(cadena)
             idSuc.IdEmpleado = ddlEmpleado.SelectedValue
             idSuc.Salario = txtSalario.Text.Trim()
-            idSuc.IdEstatusSalarioEmpleado = ddlEstSal.SelectedValue
+            idSuc.IdEstatusSalarioEmpleado = ddlEstSalEmp.SelectedValue
             idSuc.Anio = txtAnio.Text.Trim()
             idSuc.FechaCreacion = txtFechaCreacion.Text.Trim()
             If hfIdAccion.Value = -1 Then

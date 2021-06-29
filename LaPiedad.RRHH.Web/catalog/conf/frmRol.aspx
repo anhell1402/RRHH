@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-9">
                                     <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
-                                    <asp:DropDownList ID="ddl" runat="server" CssClass="form-control"></asp:DropDownList>
+                                 <%--   <asp:DropDownList ID="ddl" runat="server" CssClass="form-control"></asp:DropDownList>--%>
                                 </div>
                             </div>
                         </div>

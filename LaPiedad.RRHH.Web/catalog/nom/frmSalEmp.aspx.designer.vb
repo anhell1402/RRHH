@@ -68,13 +68,13 @@ Partial Public Class frmSalEmp
     Protected WithEvents txtSalario As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control ddlEstSal.
+    '''Control ddlEstSalEmp.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlEstSal As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlEstSalEmp As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control txtAnio.

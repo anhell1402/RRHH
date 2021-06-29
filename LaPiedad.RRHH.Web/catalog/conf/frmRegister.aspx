@@ -2,11 +2,11 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">        
+     <script type="text/javascript">        
         function Forzar() {
             __doPostBack('', '');
         }
-    </script>
+     </script>
     <style type="text/css">        
         .modalBackground
         {
@@ -24,7 +24,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1"
+     <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1"
         BackgroundCssClass="modalBackground" TargetControlID="btnNuevo" CancelControlID="btnClose" ></ajaxToolkit:ModalPopupExtender>
 
     <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
@@ -33,18 +33,46 @@
                 <ContentTemplate>                   
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> de Tipo de Teléfono</h5>                        
+                            <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> de Usuarios</h5>                        
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="row">
-                                <div class="col-3">
-                                    Descripción:
+                            <div class="form-group-user row">
+                                  <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtNombre" placeholder="Nombre(s)" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div class="mx-auto" style="height: 10px;"></div>
                                 </div>
-                                <div class="col-9">
-                                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
+                                
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtApPaterno" placeholder="Apellido Paterno" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div class="mx-auto" style="height: 10px;"></div>
                                 </div>
+                                 
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtApMaterno" placeholder="Apellido Materno" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div class="mx-auto" style="height: 10px;"></div>
+                                </div>
+                                 
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtUsuario" placeholder="Usuario" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div class="mx-auto" style="height: 10px;"></div>
+                                </div>
+                                 
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <asp:TextBox ID="txtContra" placeholder="Contraseña" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                    <div class="mx-auto" style="height: 10px;"></div>
+                                </div>
+                           
+                                 <div class="col-6">
+                                   <asp:DropDownList ID="ddlEdoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
+                                   <div class="mx-auto" style="height: 10px;"></div>
+                                </div>
+                                 
+                                <div class="col-6">
+                                    <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-control"></asp:DropDownList>
+                                </div>
+
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -59,7 +87,7 @@
         </div>            
     </asp:Panel>    
     <div class="container-fluid text-right">    
-        <asp:Button ID="btnNuevo" runat="server" Text ="Nuevo tipo de telefono"  CssClass="btn btn-primary" />
+        <asp:Button ID="btnNuevo" runat="server" Text ="Nuevo usuario"  CssClass="btn btn-primary" />
         <div class="mx-auto" style="height: 10px;"></div>
     </div>
     <div class="card shadow mb-4">                       
@@ -70,7 +98,12 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Descripcion</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
+                                    <th>Usuario</th>
+                                    <th>Estatus</th>
+                                    <th>Rol</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
                                 </tr>
@@ -79,15 +112,21 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><%#Eval("Descripcion") %></td>
+                            <td><%#Eval("Nombre") %></td>
+                            <td><%#Eval("Paterno") %></td>
+                            <td><%#Eval("Materno") %></td>
+                            <td><%#Eval("NombreUsuario") %></td>
+                            <td><%#Eval("GetDescripcionEstatus") %></td>
+                            <td><%#Eval("GetDescripcionRol") %></td>
+
                             <td>
                                 <asp:Button CssClass="btn btn-info btn-icon-split" Text="Editar" ID="imgEditar"
-                                    CommandArgument='<%#Eval("IdTipoTelefono") %>'
+                                    CommandArgument='<%#Eval("IdUsuario") %>'
                                     runat="server" CommandName="editacion" />
                             </td>
                             <td>
                                 <asp:Button CssClass="btn btn-danger btn-icon-split" Text="Eliminar" ID="btnEliminar"
-                                    CommandArgument='<%#Eval("IdTipoTelefono") %>' OnClientClick="return confirm('¿Está seguro que desea eliminar?')"
+                                    CommandArgument='<%#Eval("IdUsuario") %>' OnClientClick="return confirm('¿Está seguro que desea eliminar?')"
                                     runat="server" CommandName="eliminacion" />
                             </td>
                         </tr>
@@ -96,7 +135,12 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Descripcion</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
+                                    <th>Usuario</th>
+                                    <th>Estatus</th>
+                                    <th>Rol</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
                                 </tr>

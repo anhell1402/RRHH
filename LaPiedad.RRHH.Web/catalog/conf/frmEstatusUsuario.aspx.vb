@@ -1,10 +1,9 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
 Public Class frmEstatusUsuario
-    Inherits System.Web.UI.Page
+    Inherits BasePage
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'CodeBehind
         If Not Page.IsPostBack Then 'Determinar si es la primera vez que se manda llamar la página
             CargarDatos()
         End If
@@ -76,5 +75,9 @@ Public Class frmEstatusUsuario
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
         ModalPopupExtender1.Hide()
+    End Sub
+
+    Private Sub frmEstatusUsuario_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
+        Acceso(11)
     End Sub
 End Class

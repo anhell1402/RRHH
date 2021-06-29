@@ -1,7 +1,7 @@
 ﻿Public Class Usuario
     Public Sub New()
-        idEstatusUsuario_ = New estatusUsuario()
-        idRol_ = New rol()
+        idEstatusUsuario_ = New EstatusUsuario
+        idRol_ = New Rol
     End Sub
 
     Private idUsuario_ As Integer
@@ -86,4 +86,25 @@
             idEstatusUsuario_.IdEstatusUsuario = value
         End Set
     End Property
+    Public WriteOnly Property DescripcionEstatus As String
+        Set(value As String)
+            idEstatusUsuario_.Descripcion = value
+        End Set
+    End Property
+    Public WriteOnly Property DescripcionRol As String
+        Set(value As String)
+            idRol_.Descripcion = value
+        End Set
+    End Property
+    Public ReadOnly Property GetDescripcionEstatus As String
+        Get
+            Return idEstatusUsuario_.Descripcion
+        End Get
+    End Property
+    Public ReadOnly Property GetDescripcionRol As String
+        Get
+            Return idRol_.Descripcion
+        End Get
+    End Property
+
 End Class

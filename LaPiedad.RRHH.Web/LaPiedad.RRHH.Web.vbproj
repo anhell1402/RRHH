@@ -109,8 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\frmLogin.aspx" />
-    <Content Include="Account\frmRegister.aspx" />
     <Content Include="catalog\conf\frmEstatusUsuario.aspx" />
+    <Content Include="catalog\conf\frmRegister.aspx" />
     <Content Include="catalog\conf\frmRol.aspx" />
     <Content Include="catalog\nom\frmClaveP.aspx" />
     <Content Include="catalog\emp\frmEmpleado.aspx" />
@@ -1831,13 +1831,6 @@
       <DependentUpon>frmLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Account\frmRegister.aspx.designer.vb">
-      <DependentUpon>frmRegister.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\frmRegister.aspx.vb">
-      <DependentUpon>frmRegister.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="App_Start\WebApiConfig.vb" />
     <Compile Include="BasePage.vb">
       <SubType>ASPXCodeBehind</SubType>
@@ -1847,6 +1840,13 @@
     </Compile>
     <Compile Include="catalog\conf\frmEstatusUsuario.aspx.vb">
       <DependentUpon>frmEstatusUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\conf\frmRegister.aspx.designer.vb">
+      <DependentUpon>frmRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\conf\frmRegister.aspx.vb">
+      <DependentUpon>frmRegister.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="catalog\conf\frmRol.aspx.designer.vb">

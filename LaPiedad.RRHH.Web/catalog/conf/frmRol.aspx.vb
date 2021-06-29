@@ -17,11 +17,6 @@ Public Class frmRol
         rptDatos.DataSource = lst
         rptDatos.DataBind()
 
-        ddl.DataSource = lst
-        ddl.DataTextField = "Descripcion" 'lo que ve el usuario
-        ddl.DataValueField = "IdRol" 'lo que ve el código
-        ddl.DataBind()
-
     End Sub
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument
