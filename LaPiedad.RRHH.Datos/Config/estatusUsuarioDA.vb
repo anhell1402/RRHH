@@ -106,4 +106,30 @@ Public Class EstatusUsuarioDA
         End Try
         Return lst
     End Function
+    Public Function ObtenerTodosDDL() As EstatusUsuarios
+        Dim lst As New EstatusUsuarios()
+        Try
+            Using objDA As New ConexDB(cadenaConex)
+                objDA.CrearComando("conf.sp_estatusUsuario_ObtenerTodos_DDL")
+                objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+                Dim lista As New List(Of EstatusUsuario)
+                lista = objDA.ObtenerResultados(Of EstatusUsuario)()
+                If Not objDA.HayError Then
+                    For Each edo As EstatusUsuario In lista
+                        lst.Add(edo)
+                    Next
+                Else
+                    lst = Nothing
+                    HayError = objDA.HayError
+                    MensajeError = objDA.MensajeError
+                End If
+                HayError = objDA.HayError
+            End Using
+        Catch ex As Exception
+            lst = Nothing
+            HayError = True
+            MensajeError = ex.Message
+        End Try
+        Return lst
+    End Function
 End Class

@@ -77,4 +77,21 @@ Public Class RolBL
         End Try
         Return lst
     End Function
+    Public Function ObtenerTodosDDL() As Roles
+        Dim lst As New Roles()
+        Try
+            Dim obj As New RolDA(cadenaConex)
+            lst = obj.ObtenerTodosDDL()
+            If obj.HayError Then
+                lst = Nothing
+            End If
+            HayError = obj.HayError
+            MensajeError = obj.MensajeError
+        Catch ex As Exception
+            HayError = True
+            MensajeError = ex.Message
+            lst = Nothing
+        End Try
+        Return lst
+    End Function
 End Class

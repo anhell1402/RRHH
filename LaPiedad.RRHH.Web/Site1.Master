@@ -96,9 +96,7 @@
                         <a class="collapse-item" href="~/catalog/conf/frmRol.aspx" runat="server" visible="false" id="mnConf_Rol">Roles</a>
                         <a class="collapse-item" href="~/catalog/conf/frmEstatusUsuario.aspx" runat="server" visible="false" id="mnConf_EdoUser">Estatus Usuario</a>
                         <a class="collapse-item" href="~/catalog/conf/frmRegister.aspx" runat="server" visible="false" id="mnConf_Usuarios">Usuarios</a>
-                        1nfr4mund0
 
-                        
                     </div>
                 </div>
 

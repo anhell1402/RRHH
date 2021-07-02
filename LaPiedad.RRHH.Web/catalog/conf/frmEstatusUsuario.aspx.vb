@@ -23,6 +23,7 @@ Public Class frmEstatusUsuario
         edo.IdEstatusUsuario = id
         Dim obj As New EstatusUsuarioBL(cadena)
         If e.CommandName = "editacion" Then
+            txtDescripcion.Text = String.Empty
             edo = obj.Obtener(edo)
             hfIdAccion.Value = id
             txtDescripcion.Text = edo.Descripcion
@@ -54,12 +55,12 @@ Public Class frmEstatusUsuario
 
             End If
             If Not obj.HayError Then
-
                 ModalPopupExtender1.Hide()
             End If
         Else
             lblAviso.Visible = True
             lblAviso.Text = "La descripción es obligatoria"
+            txtDescripcion.Text = String.Empty
             ModalPopupExtender1.Show()
         End If
         If valida Then
@@ -70,10 +71,12 @@ Public Class frmEstatusUsuario
     End Sub
 
     Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
+        txtDescripcion.Text = String.Empty
         ModalPopupExtender1.Show()
     End Sub
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
+        txtDescripcion.Text = String.Empty
         ModalPopupExtender1.Hide()
     End Sub
 

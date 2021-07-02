@@ -24,7 +24,7 @@ Public Class frmRegister
     Public Sub LlenarDropDowns()
         Dim obj1 As New EstatusUsuarioBL(cadena)
         Dim lstEdo As New EstatusUsuarios()
-        lstEdo = obj1.ObtenerTodos()
+        lstEdo = obj1.ObtenerTodosDDL()
 
         ddlEdoUsuario.DataSource = lstEdo
         ddlEdoUsuario.DataTextField = "Descripcion" 'lo que ve el usuario
@@ -33,7 +33,7 @@ Public Class frmRegister
 
         Dim obj2 As New RolBL(cadena)
         Dim lstRol As New Roles()
-        lstRol = obj2.ObtenerTodos()
+        lstRol = obj2.ObtenerTodosDDL()
 
         ddlRol.DataSource = lstRol
         ddlRol.DataTextField = "Descripcion"

@@ -106,4 +106,30 @@ Public Class RolDA
         End Try
         Return lst
     End Function
+    Public Function ObtenerTodosDDL() As Roles
+        Dim lst As New Roles()
+        Try
+            Using objDA As New ConexDB(cadenaConex)
+                objDA.CrearComando("conf.sp_rol_ObtenerTodos_DDL")
+                objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+                Dim lista As New List(Of Rol)
+                lista = objDA.ObtenerResultados(Of Rol)()
+                If Not objDA.HayError Then
+                    For Each rol As Rol In lista
+                        lst.Add(rol)
+                    Next
+                Else
+                    lst = Nothing
+                    HayError = objDA.HayError
+                    MensajeError = objDA.MensajeError
+                End If
+                HayError = objDA.HayError
+            End Using
+        Catch ex As Exception
+            lst = Nothing
+            HayError = True
+            MensajeError = ex.Message
+        End Try
+        Return lst
+    End Function
 End Class

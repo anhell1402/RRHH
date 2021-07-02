@@ -10,6 +10,8 @@ Public Class frmLogin
         If Not Page.IsPostBack Then
             Session.Clear()
             FormsAuthentication.SignOut()
+            txtUsuario.Text = String.Empty
+            txtPasswd.Text = String.Empty
         End If
     End Sub
 
