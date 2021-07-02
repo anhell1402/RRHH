@@ -45,14 +45,12 @@
                                 <div class="col-8">
                                     <asp:DropDownList  ID="ddlEmpleado" runat="server" CssClass="form-control">
                                     <asp:ListItem Value="0">-Seleccione-</asp:ListItem>
-                                    <asp:ListItem Value="1">Empleado-1</asp:ListItem>
-                                    <asp:ListItem Value="2">Empleado-2</asp:ListItem>
+                                    <asp:ListItem Value="1">Pepe Toño Galicio Malboro</asp:ListItem>
+                                    <asp:ListItem Value="2">Edelberte Mertenez Mencleve</asp:ListItem>
                                   </asp:DropDownList>
                                 </div>
                             </div>
-                            <!-- ESTO HACE UN ESPACIO DE "X" PIXELES ENTRE LINEAS-->
                             <div class="mx-auto" style="height: 10px;"></div>
-                            <!-- AQUI TERMINA -->
                             <div class="row">
                                 <div class="col-4">
                                     Salario:
@@ -61,19 +59,16 @@
                                    <asp:TextBox ID="txtSalario" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
-                            <!-- ESTO HACE UN ESPACIO DE "X" PIXELES ENTRE LINEAS-->
                             <div class="mx-auto" style="height: 10px;"></div>
-                            <!-- AQUI TERMINA -->
                               <div class="row">
                                 <div class="col-4">
                                     Estatus del Salario:
                                 </div>
                                 <div class="col-8">
-                                  <asp:DropDownList  ID="ddlEstSal" runat="server" CssClass="form-control">
+                                  <asp:DropDownList  ID="ddlEstSalEmp" runat="server" CssClass="form-control">
                                     <asp:ListItem Value="0">-Seleccione-</asp:ListItem>
-                                    <asp:ListItem Value="1">Activo</asp:ListItem>
-                                    <asp:ListItem Value="2">Retenido</asp:ListItem>
-                                    <asp:ListItem Value="3">Cancelado</asp:ListItem>
+                                    <asp:ListItem Value="1">Vigente</asp:ListItem>
+                                    <asp:ListItem Value="2">Historial</asp:ListItem>
                                   </asp:DropDownList>
                                 </div>
                             </div>
@@ -85,9 +80,7 @@
                                    <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
-                            <!-- ESTO HACE UN ESPACIO DE "X" PIXELES ENTRE LINEAS-->
                             <div class="mx-auto" style="height: 10px;"></div>
-                            <!-- AQUI TERMINA -->
                              <div class="row">
                                 <div class="col-4">
                                     Fecha de Creación:
@@ -95,10 +88,8 @@
                                 <div class="col-8">
                                    <asp:TextBox ID="txtFechaCreacion" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                            </div>
-                            <!-- ESTO HACE UN ESPACIO DE "X" PIXELES ENTRE LINEAS-->
+                            </div>                  
                             <div class="mx-auto" style="height: 10px;"></div>
-                            <!-- AQUI TERMINA -->
                         </div>
                       
                         <div class="modal-footer">

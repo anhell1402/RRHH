@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="frmSem.aspx.vb" Inherits="LaPiedad.RRHH.Web.Sem" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="frmRol.aspx.vb" Inherits="LaPiedad.RRHH.Web.frmRol" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -33,45 +33,21 @@
                 <ContentTemplate>                   
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> de la Semana</h5>                        
+                            <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> de Rol</h5>                        
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-4">
-                                    Fecha de Inicio:
+                                <div class="col-3">
+                                    Descripción:
                                 </div>
-                                <div class="col-8">
-                                    <asp:TextBox ID="txtInicio" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                              <!-- ESTO HACE UN ESPACIO DE "X" PIXELES ENTRE LINEAS-->
-                            <div class="mx-auto" style="height: 10px;"></div>
-                            <!-- AQUI TERMINA -->
-                              <div class="row">
-                                <div class="col-4">
-                                    Fecha Final:
-                                </div>
-                                <div class="col-8">
-                                    <asp:TextBox ID="txtFin" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                              <!-- ESTO HACE UN ESPACIO DE "X" PIXELES ENTRE LINEAS-->
-                            <div class="mx-auto" style="height: 10px;"></div>
-                            <!-- AQUI TERMINA -->
-                              <div class="row">
-                                <div class="col-4">
-                                    Estatus:
-                                </div>
-                                <div class="col-8">
-                                  <asp:DropDownList  ID="ddlEstaSem" runat="server" CssClass="form-control">
-                                  </asp:DropDownList>
+                                <div class="col-9">
+                                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
+                                 <%--   <asp:DropDownList ID="ddl" runat="server" CssClass="form-control"></asp:DropDownList>--%>
                                 </div>
                             </div>
                         </div>
-                      
-                      
                         <div class="modal-footer">
                             <asp:Label ID="lblAviso" runat="server" CssClass="alert alert-danger" Visible="false"></asp:Label>
                             <asp:Button ID="btnClose" CssClass="btn btn-secondary" runat="server" Text="Cerrar" OnClick="btnClose_Click" />
@@ -84,7 +60,7 @@
         </div>            
     </asp:Panel>    
     <div class="container-fluid text-right">    
-        <asp:Button ID="btnNuevo" runat="server" Text ="Nueva semana"  CssClass="btn btn-primary" />
+        <asp:Button ID="btnNuevo" runat="server" Text ="Nuevo rol"  CssClass="btn btn-primary" />
         <div class="mx-auto" style="height: 10px;"></div>
     </div>
     <div class="card shadow mb-4">                       
@@ -95,9 +71,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Fecha Inicial</th>
-                                    <th>Fecha Final</th>
-                                    <th>Estatus Semana</th>
+                                    <th>Descripcion</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
                                 </tr>
@@ -106,17 +80,15 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><%#Eval("Inicio") %></td>
-                            <td><%#Eval("Fin") %></td>
-                            <td><%#Eval("IdEstatusSemana") %></td>
+                            <td><%#Eval("Descripcion") %></td>
                             <td>
                                 <asp:Button CssClass="btn btn-info btn-icon-split" Text="Editar" ID="imgEditar"
-                                    CommandArgument='<%#Eval("IdSemana") %>'
+                                    CommandArgument='<%#Eval("IdRol") %>'
                                     runat="server" CommandName="editacion" />
                             </td>
                             <td>
                                 <asp:Button CssClass="btn btn-danger btn-icon-split" Text="Eliminar" ID="btnEliminar"
-                                    CommandArgument='<%#Eval("IdSemana") %>' OnClientClick="return confirm('¿Está seguro que desea eliminar?')"
+                                    CommandArgument='<%#Eval("IdRol") %>' OnClientClick="return confirm('¿Está seguro que desea eliminar?')"
                                     runat="server" CommandName="eliminacion" />
                             </td>
                         </tr>
@@ -125,9 +97,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Fecha Inicial</th>
-                                    <th>Fecha Final</th>
-                                    <th>Estatus Semana</th>
+                                    <th>Descripcion</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
                                 </tr>

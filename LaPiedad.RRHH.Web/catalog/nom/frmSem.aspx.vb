@@ -1,7 +1,7 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
 Public Class Sem
-    Inherits System.Web.UI.Page
+    Inherits BasePage
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'CodeBehind
@@ -17,6 +17,12 @@ Public Class Sem
         lst = obj.ObtenerTodos()
         rptDatos.DataSource = lst
         rptDatos.DataBind()
+        Dim item As New ListItem("Seleccione", "0")
+        ddlEstaSem.Items.Add(item)
+        item = New ListItem("Vigente", "1")
+        ddlEstaSem.Items.Add(item)
+        item = New ListItem("Historial", "2")
+        ddlEstaSem.Items.Add(item)
     End Sub
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument
@@ -80,5 +86,9 @@ Public Class Sem
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
         ModalPopupExtender1.Hide()
+    End Sub
+
+    Private Sub Sem_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
+        Acceso(3)
     End Sub
 End Class

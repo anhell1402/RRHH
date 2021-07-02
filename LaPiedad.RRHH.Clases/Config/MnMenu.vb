@@ -1,4 +1,4 @@
-﻿Public Class menu
+﻿Public Class MnMenu
 
     Private idMenu_ As Integer
     Public Property IdMenu As Integer
@@ -27,5 +27,6 @@
             descripcion_ = value
         End Set
     End Property
-
+    Public Property NomControl As String
+    Public Property NomPadre As String
 End Class

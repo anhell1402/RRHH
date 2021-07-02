@@ -5,29 +5,29 @@
 <html>
 <head runat="server">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link  href="<%= ResolveUrl("~/vendor/fontawesome-free/css/all.min.css")%>" rel="stylesheet" type="text/css"/>
+    <link  href="<%= ResolveUrl("~/vendor/fontawesome-free/css/all.min.css")%>" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet"/>
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<%= ResolveUrl("~/css/sb-admin-2.min.css")%>" rel="stylesheet"/>
-    <link href="<%= ResolveUrl("~/vendor/datatables/dataTables.bootstrap4.min.css")%>" rel="stylesheet"/>
+    <link href="<%= ResolveUrl("~/css/sb-admin-2.min.css")%>" rel="stylesheet">
+    <link href="<%= ResolveUrl("~/vendor/datatables/dataTables.bootstrap4.min.css")%>" rel="stylesheet">
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 <body id="page-top"  >
-
+<form id="form1" runat="server">
+    
     <!-- Page Wrapper -->
     <div id="wrapper" >
 
@@ -59,6 +59,48 @@
             <div class="sidebar-heading">
                 Interface
             </div>
+
+            <li class="nav-item" runat="server" id="mnCatalogo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Catálogos</span>
+                </a>
+                <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Nómina</h6>
+                        <a class="collapse-item" href="~/catalog/nom/frmClaveP.aspx" runat="server" visible="false" id="mnNom_CvesPago">Claves de pago</a>
+                        <a class="collapse-item" href="~/catalog/nom/frmSalEmp.aspx" runat="server" visible="false" id="mnNom_SalEmp">Salario de Empleado</a>
+                        <a class="collapse-item" href="~/catalog/nom/frmSem.aspx" runat="server" visible="false" id="mnNom_Semana">Semana</a>
+
+                        <h6 class="collapse-header">RRHH</h6>
+                        <a class="collapse-item" href="~/catalog/rh/frmEdoCivil.aspx" runat="server" visible="false" id="mnRH_EdoCivil">Estado Civil</a>                        
+                        <a class="collapse-item" href="~/catalog/rh/frmNivelAcad.aspx" runat="server" visible="false" id="mnRH_NivAcad">Nivel Académico</a>
+                        <a class="collapse-item" href="~/catalog/rh/frmPadec.aspx" runat="server" visible="false" id="mnRH_Padec">Padecimientos</a>
+                        <a class="collapse-item" href="~/catalog/rh/frmPasaTiem.aspx" runat="server" visible="false" id="mnRH_Pasat">Pasatiempos</a>
+                        <a class="collapse-item" href="~/catalog/rh/frmSex.aspx" runat="server" visible="false" id="mnRH_Sexo">Sexo</a>
+                        <a class="collapse-item" href="~/catalog/tel/frmTipT.aspx" runat="server" visible="false" id="mnDBO_TipoTel">Tipo Teléfono</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="nav-item" runat="server" id="mnConfiguracion">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Configuración</span>
+                </a>
+                <div id="collapseTwo3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <%--<h6 class="collapse-header">Nómina</h6>--%>
+                        <a class="collapse-item" href="~/catalog/conf/frmRol.aspx" runat="server" visible="false" id="mnConf_Rol">Roles</a>
+                        <a class="collapse-item" href="~/catalog/conf/frmEstatusUsuario.aspx" runat="server" visible="false" id="mnConf_EdoUser">Estatus Usuario</a>
+                        <a class="collapse-item" href="~/catalog/conf/frmRegister.aspx" runat="server" visible="false" id="mnConf_Usuarios">Usuarios</a>
+
+                    </div>
+                </div>
+
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -172,7 +214,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                   <%-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -183,7 +225,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form>--%>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -197,7 +239,7 @@
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                 aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
+                                <%--<form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
                                             placeholder="Search for..." aria-label="Search"
@@ -208,7 +250,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                </form>
+                                </form>--%>
                             </div>
                         </li>
 
@@ -335,14 +377,16 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <asp:Label ID="lblUsuario" runat="server"></asp:Label>
+                                </span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                               <%-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -354,10 +398,11 @@
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                <div class="dropdown-divider"></div>--%>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">                                    
+                                    <asp:LoginStatus runat="server" CssClass="nav-link" Font-Bold="true"
+                                        LogoutAction="Redirect" LogoutText='<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Salir' LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <%--Logout--%>
                                 </a>
                             </div>
                         </li>
@@ -380,13 +425,13 @@
                     <!-- Content Row -->
                     <div >
 
-                        <form id="form1" runat="server" >
+                        
                             
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
                            
-                        </form>
+                        
                     </div>
 
                 </div>
@@ -460,6 +505,6 @@
 
     <!-- Page level custom scripts -->
     <script src="<%= ResolveUrl("~/js/demo/datatables-demo.js")%>"></script>
-   
+</form>       
 </body>
 </html>

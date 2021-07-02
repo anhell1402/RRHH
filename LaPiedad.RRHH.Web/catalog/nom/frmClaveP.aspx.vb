@@ -1,7 +1,7 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
 Public Class frmClaveP
-    Inherits System.Web.UI.Page
+    Inherits BasePage
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'CodeBehind
@@ -76,5 +76,9 @@ Public Class frmClaveP
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)
         ModalPopupExtender1.Hide()
+    End Sub
+
+    Private Sub frmClaveP_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
+        Acceso(1)
     End Sub
 End Class

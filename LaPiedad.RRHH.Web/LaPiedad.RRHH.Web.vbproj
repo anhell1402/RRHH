@@ -109,7 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\frmLogin.aspx" />
-    <Content Include="Account\frmRegister.aspx" />
+    <Content Include="catalog\conf\frmEstatusUsuario.aspx" />
+    <Content Include="catalog\conf\frmRegister.aspx" />
+    <Content Include="catalog\conf\frmRol.aspx" />
     <Content Include="catalog\nom\frmClaveP.aspx" />
     <Content Include="catalog\emp\frmEmpleado.aspx" />
     <Content Include="catalog\nom\frmSalEmp.aspx" />
@@ -141,6 +143,7 @@
     <Content Include="js\demo\datatables-demo.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
+    <Content Include="nopermitido.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -1828,14 +1831,31 @@
       <DependentUpon>frmLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Account\frmRegister.aspx.designer.vb">
+    <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalog\conf\frmEstatusUsuario.aspx.designer.vb">
+      <DependentUpon>frmEstatusUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\conf\frmEstatusUsuario.aspx.vb">
+      <DependentUpon>frmEstatusUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catalog\conf\frmRegister.aspx.designer.vb">
       <DependentUpon>frmRegister.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\frmRegister.aspx.vb">
+    <Compile Include="catalog\conf\frmRegister.aspx.vb">
       <DependentUpon>frmRegister.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="catalog\conf\frmRol.aspx.designer.vb">
+      <DependentUpon>frmRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog\conf\frmRol.aspx.vb">
+      <DependentUpon>frmRol.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="catalog\nom\frmClaveP.aspx.designer.vb">
       <DependentUpon>frmClaveP.aspx</DependentUpon>
     </Compile>
@@ -1927,6 +1947,7 @@
       <DependentUpon>frmTipT.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Classes\SesionVars.vb" />
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
@@ -1955,6 +1976,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="nopermitido.aspx.designer.vb">
+      <DependentUpon>nopermitido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nopermitido.aspx.vb">
+      <DependentUpon>nopermitido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.vb">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -2189,6 +2217,10 @@
     <ProjectReference Include="..\LaPiedad.RRHH.Negocio\LaPiedad.RRHH.Negocio.vbproj">
       <Project>{1d08d42f-ea11-4d1c-93df-166fe857a380}</Project>
       <Name>LaPiedad.RRHH.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piedad.MasterPS.Utilerias\Piedad.MasterPS.Utilerias.vbproj">
+      <Project>{a2926c08-6d04-4580-b9dd-8fce389ab5a6}</Project>
+      <Name>Piedad.MasterPS.Utilerias</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

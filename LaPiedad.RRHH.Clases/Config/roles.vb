@@ -1,3 +1,3 @@
-﻿Public Class roles
-    Inherits List(Of rol)
+﻿Public Class Roles
+    Inherits List(Of Rol)
 End Class

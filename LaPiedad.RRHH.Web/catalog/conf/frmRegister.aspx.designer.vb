@@ -11,176 +11,158 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Site1
+Partial Public Class frmRegister
 
     '''<summary>
-    '''Control head.
+    '''Control ModalPopupExtender1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents ModalPopupExtender1 As Global.AjaxControlToolkit.ModalPopupExtender
 
     '''<summary>
-    '''Control form1.
+    '''Control Panel1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Control mnCatalogo.
+    '''Control UpdatePanel1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnCatalogo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''Control mnNom_CvesPago.
+    '''Control Label1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnNom_CvesPago As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control mnNom_SalEmp.
+    '''Control txtNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnNom_SalEmp As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control mnNom_Semana.
+    '''Control txtApPaterno.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnNom_Semana As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents txtApPaterno As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control mnRH_EdoCivil.
+    '''Control txtApMaterno.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnRH_EdoCivil As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents txtApMaterno As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control mnRH_NivAcad.
+    '''Control txtUsuario.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnRH_NivAcad As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents txtUsuario As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control mnRH_Padec.
+    '''Control txtContra.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnRH_Padec As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents txtContra As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control mnRH_Pasat.
+    '''Control ddlEdoUsuario.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnRH_Pasat As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents ddlEdoUsuario As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control mnRH_Sexo.
+    '''Control ddlRol.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnRH_Sexo As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents ddlRol As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control mnDBO_TipoTel.
+    '''Control lblAviso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnDBO_TipoTel As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents lblAviso As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control mnConfiguracion.
+    '''Control btnClose.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnConfiguracion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents btnClose As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control mnConf_Rol.
+    '''Control hfIdAccion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnConf_Rol As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents hfIdAccion As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''Control mnConf_EdoUser.
+    '''Control btnGuardar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnConf_EdoUser As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control mnConf_Usuarios.
+    '''Control btnNuevo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mnConf_Usuarios As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents btnNuevo As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control lblUsuario.
+    '''Control rptDatos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblUsuario As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control ScriptManager1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-
-    '''<summary>
-    '''Control ContentPlaceHolder1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents rptDatos As Global.System.Web.UI.WebControls.Repeater
 End Class

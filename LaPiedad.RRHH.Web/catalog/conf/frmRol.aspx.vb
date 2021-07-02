@@ -1,10 +1,9 @@
 ﻿Imports LaPiedad.RRHH.Clases
 Imports LaPiedad.RRHH.Negocio
-Public Class frmSalEmp
+Public Class frmRol
     Inherits BasePage
     Private cadena As String = ConfigurationManager.ConnectionStrings("RH").ConnectionString
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'CodeBehind
         If Not Page.IsPostBack Then 'Determinar si es la primera vez que se manda llamar la página
             CargarDatos()
         End If
@@ -12,29 +11,25 @@ Public Class frmSalEmp
     Public Sub CargarDatos()
         rptDatos.DataSource = Nothing
         rptDatos.DataBind()
-        Dim obj As New SalarioEmpleadoBL(cadena)
-        Dim lst As New SalarioEmpleados()
+        Dim obj As New RolBL(cadena)
+        Dim lst As New Roles()
         lst = obj.ObtenerTodos()
         rptDatos.DataSource = lst
         rptDatos.DataBind()
-    End Sub
 
+    End Sub
     Protected Sub rptDatos_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
         Dim id As String = e.CommandArgument
-        Dim idSal As New SalarioEmpleado()
-        idSal.IdSalarioSemana = id
-        Dim obj As New SalarioEmpleadoBL(cadena)
+        Dim rl As New Rol()
+        rl.IdRol = id
+        Dim obj As New RolBL(cadena)
         If e.CommandName = "editacion" Then
-            idSal = obj.Obtener(idSal)
+            rl = obj.Obtener(rl)
             hfIdAccion.Value = id
-            ddlEmpleado.SelectedValue = idSal.IdEmpleado
-            txtSalario.Text = idSal.Salario
-            ddlEstSalEmp.SelectedValue = idSal.IdEstatusSalarioEmpleado
-            txtAnio.Text = idSal.Anio
-            txtFechaCreacion.Text = idSal.FechaCreacion
+            txtDescripcion.Text = rl.Descripcion
             ModalPopupExtender1.Show()
         Else
-            obj.Eliminar(idSal)
+            obj.Eliminar(rl)
             If Not obj.HayError Then
                 CargarDatos()
             End If
@@ -44,31 +39,28 @@ Public Class frmSalEmp
     Protected Sub btnGuardar_Click(sender As Object, e As EventArgs)
         Dim valida As Boolean = False
         lblAviso.Visible = False
-        If ddlEmpleado.SelectedValue <> 0 And txtSalario.Text.Trim() <> String.Empty And ddlEstSalEmp.SelectedValue <> 0 And
-            txtAnio.Text.Trim() <> String.Empty And txtFechaCreacion.Text.Trim() <> String.Empty Then
-            Dim idSuc As New SalarioEmpleado()
-            Dim obj As New SalarioEmpleadoBL(cadena)
-            idSuc.IdEmpleado = ddlEmpleado.SelectedValue
-            idSuc.Salario = txtSalario.Text.Trim()
-            idSuc.IdEstatusSalarioEmpleado = ddlEstSalEmp.SelectedValue
-            idSuc.Anio = txtAnio.Text.Trim()
-            idSuc.FechaCreacion = txtFechaCreacion.Text.Trim()
+        If txtDescripcion.Text.Trim() <> String.Empty Then
+            Dim rl As New Rol()
+            Dim obj As New RolBL(cadena)
+            rl.Descripcion = txtDescripcion.Text.Trim()
             If hfIdAccion.Value = -1 Then
                 'alta
-                obj.Almacenar(idSuc)
+                obj.Almacenar(rl)
                 valida = True
             Else
                 'modificacion
-                idSuc.IdSalarioSemana = hfIdAccion.Value
-                obj.Actualizar(idSuc)
+                rl.IdRol = hfIdAccion.Value
+                obj.Actualizar(rl)
                 valida = True
+
             End If
             If Not obj.HayError Then
+
                 ModalPopupExtender1.Hide()
             End If
         Else
             lblAviso.Visible = True
-            lblAviso.Text = "Todos los campos deben estar llenos."
+            lblAviso.Text = "La descripción es obligatoria"
             ModalPopupExtender1.Show()
         End If
         If valida Then
@@ -86,7 +78,7 @@ Public Class frmSalEmp
         ModalPopupExtender1.Hide()
     End Sub
 
-    Private Sub frmSalEmp_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
-        Acceso(2)
+    Private Sub frmRol_PreInit(sender As Object, e As EventArgs) Handles Me.PreInit
+        Acceso(10)
     End Sub
 End Class

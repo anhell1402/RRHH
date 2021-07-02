@@ -77,4 +77,39 @@ Public Class UsuarioBL
         End Try
         Return lst
     End Function
+    Public Function Autenticar(ByVal usr As Usuario) As Usuario
+        Try
+            Dim obj As New UsuarioDA(cadenaConex)
+            usr = obj.Autenticar(usr)
+            If obj.HayError Then
+                usr = Nothing
+            End If
+            HayError = obj.HayError
+            MensajeError = obj.MensajeError
+        Catch ex As Exception
+            HayError = True
+            MensajeError = ex.Message
+            usr = Nothing
+        End Try
+        Return usr
+    End Function
+    Public Function ObtenerMenu(ByVal usr As Usuario) As MnMenus
+        Dim lst As MnMenus = Nothing
+        Try
+            Dim obj As New UsuarioDA(cadenaConex)
+            lst = obj.ObtenerMenu(usr)
+            If obj.HayError Then
+                lst = Nothing
+                HayError = True
+                MensajeError = obj.MensajeError
+            End If
+            HayError = obj.HayError
+            MensajeError = obj.MensajeError
+        Catch ex As Exception
+            HayError = True
+            MensajeError = ex.Message
+            lst = Nothing
+        End Try
+        Return lst
+    End Function
 End Class

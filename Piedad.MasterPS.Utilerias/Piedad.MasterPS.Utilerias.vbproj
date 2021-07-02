@@ -4,13 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3306C3B1-44B3-4021-BD24-C09CE4084D14}</ProjectGuid>
+    <ProjectGuid>{A2926C08-6D04-4580-B9DD-8FCE389AB5A6}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LaPiedad.RRHH.Clases</RootNamespace>
-    <AssemblyName>LaPiedad.RRHH.Clases</AssemblyName>
+    <RootNamespace>Piedad.MasterPS.Utilerias</RootNamespace>
+    <AssemblyName>Piedad.MasterPS.Utilerias</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>LaPiedad.RRHH.Clases.xml</DocumentationFile>
+    <DocumentationFile>Piedad.MasterPS.Utilerias.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>LaPiedad.RRHH.Clases.xml</DocumentationFile>
+    <DocumentationFile>Piedad.MasterPS.Utilerias.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,7 +46,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,16 +64,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\EstatusUsuario.vb" />
-    <Compile Include="Config\EstatusUsuarios.vb" />
-    <Compile Include="Config\MnMenu.vb" />
-    <Compile Include="Config\MnMenus.vb" />
-    <Compile Include="Config\Rol.vb" />
-    <Compile Include="Config\Roles.vb" />
-    <Compile Include="Config\Usuario.vb" />
-    <Compile Include="Config\Usuarios.vb" />
-    <Compile Include="Gral\TipoTelefono.vb" />
-    <Compile Include="Gral\TipoTelefonos.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -90,31 +79,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Nom\ClavePago.vb" />
-    <Compile Include="Nom\ClavePagos.vb" />
-    <Compile Include="Nom\EstatusSalarioEmpleado.vb" />
-    <Compile Include="Nom\EstatusSemana.vb" />
-    <Compile Include="Nom\SalarioEmpleado.vb" />
-    <Compile Include="Nom\SalarioEmpleados.vb" />
-    <Compile Include="Nom\Semana.vb" />
-    <Compile Include="Nom\Semanas.vb" />
-    <Compile Include="Nom\TipoPago.vb" />
-    <Compile Include="RH\Escolaridad.vb" />
-    <Compile Include="RH\Escolaridades.vb" />
-    <Compile Include="RH\EstadoCivil.vb" />
-    <Compile Include="RH\EstadoCiviles.vb" />
-    <Compile Include="RH\EstatusEscolaridad.vb" />
-    <Compile Include="RH\EstatusEscolaridades.vb" />
-    <Compile Include="RH\Hijo.vb" />
-    <Compile Include="RH\Hijos.vb" />
-    <Compile Include="RH\NivelAcademico.vb" />
-    <Compile Include="RH\NivelAcademicos.vb" />
-    <Compile Include="RH\Padecimiento.vb" />
-    <Compile Include="RH\Padecimientos.vb" />
-    <Compile Include="RH\Pasatiempo.vb" />
-    <Compile Include="RH\Pasatiempos.vb" />
-    <Compile Include="RH\Sexo.vb" />
-    <Compile Include="RH\Sexos.vb" />
+    <Compile Include="Protection.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -134,8 +99,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
