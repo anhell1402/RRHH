@@ -144,6 +144,8 @@
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
     <Content Include="nopermitido.aspx" />
+    <Content Include="rh\frmBusqEmp.aspx" />
+    <Content Include="rh\frmEmp.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -1982,6 +1984,20 @@
     </Compile>
     <Compile Include="nopermitido.aspx.vb">
       <DependentUpon>nopermitido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rh\frmBusqEmp.aspx.designer.vb">
+      <DependentUpon>frmBusqEmp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rh\frmBusqEmp.aspx.vb">
+      <DependentUpon>frmBusqEmp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rh\frmEmp.aspx.designer.vb">
+      <DependentUpon>frmEmp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rh\frmEmp.aspx.vb">
+      <DependentUpon>frmEmp.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.vb">

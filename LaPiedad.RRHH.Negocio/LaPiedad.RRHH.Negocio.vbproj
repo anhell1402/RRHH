@@ -89,6 +89,7 @@
     <Compile Include="Nom\ClavePagoBL.vb" />
     <Compile Include="Nom\SalarioEmpleadoBL.vb" />
     <Compile Include="Nom\SemanaBL.vb" />
+    <Compile Include="RH\EmpleadoBL.vb" />
     <Compile Include="RH\EscolaridadBL.vb" />
     <Compile Include="RH\EstadoCivilBL.vb" />
     <Compile Include="RH\EstatusEscolaridadBL.vb" />

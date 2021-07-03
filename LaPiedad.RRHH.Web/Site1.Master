@@ -101,6 +101,22 @@
                 </div>
 
             </li>
+            <li class="nav-item" runat="server" id="mnRRHH">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo4"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Recursos Humanos</span>
+                </a>
+                <div id="collapseTwo4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <%--<h6 class="collapse-header">Nómina</h6>--%>
+                        <a class="collapse-item" href="~/rh/frmbusqemp.aspx" runat="server" visible="false" id="mnRH_Busqueda">Búsqueda Empleado</a>
+                        
+
+                    </div>
+                </div>
+
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -427,7 +443,7 @@
 
                         
                             
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server" ></asp:ScriptManager>
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
                            

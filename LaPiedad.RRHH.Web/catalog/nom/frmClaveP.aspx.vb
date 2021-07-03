@@ -71,7 +71,10 @@ Public Class frmClaveP
     End Sub
 
     Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
+        txtDescripcion.Text = String.Empty
+        ddlTipoPago.SelectedIndex = 0
         ModalPopupExtender1.Show()
+
     End Sub
 
     Protected Sub btnClose_Click(sender As Object, e As EventArgs)

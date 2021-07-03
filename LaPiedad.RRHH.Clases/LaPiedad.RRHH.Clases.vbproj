@@ -73,6 +73,13 @@
     <Compile Include="Config\Roles.vb" />
     <Compile Include="Config\Usuario.vb" />
     <Compile Include="Config\Usuarios.vb" />
+    <Compile Include="Gral\Direccion.vb" />
+    <Compile Include="Gral\Estado.vb" />
+    <Compile Include="Gral\Estados.vb" />
+    <Compile Include="Gral\Municipio.vb" />
+    <Compile Include="Gral\Municipios.vb" />
+    <Compile Include="Gral\Pais.vb" />
+    <Compile Include="Gral\Paises.vb" />
     <Compile Include="Gral\TipoTelefono.vb" />
     <Compile Include="Gral\TipoTelefonos.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -99,10 +106,13 @@
     <Compile Include="Nom\Semana.vb" />
     <Compile Include="Nom\Semanas.vb" />
     <Compile Include="Nom\TipoPago.vb" />
+    <Compile Include="RH\Empleado.vb" />
+    <Compile Include="RH\Empleados.vb" />
     <Compile Include="RH\Escolaridad.vb" />
     <Compile Include="RH\Escolaridades.vb" />
     <Compile Include="RH\EstadoCivil.vb" />
     <Compile Include="RH\EstadoCiviles.vb" />
+    <Compile Include="RH\EstatusEmpleado.vb" />
     <Compile Include="RH\EstatusEscolaridad.vb" />
     <Compile Include="RH\EstatusEscolaridades.vb" />
     <Compile Include="RH\Hijo.vb" />

@@ -158,6 +158,24 @@ Partial Public Class Site1
     Protected WithEvents mnConf_Usuarios As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
+    '''Control mnRRHH.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents mnRRHH As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control mnRH_Busqueda.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents mnRH_Busqueda As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''Control lblUsuario.
     '''</summary>
     '''<remarks>

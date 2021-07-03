@@ -24,8 +24,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
     <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1"
-        BackgroundCssClass="modalBackground" TargetControlID="btnNuevo" CancelControlID="btnClose" ></ajaxToolkit:ModalPopupExtender>
+        BackgroundCssClass="modalBackground" TargetControlID="lnkDummy" CancelControlID="btnClose" ></ajaxToolkit:ModalPopupExtender>
 
     <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
         <div style="">
@@ -34,8 +35,8 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> del Salario por Empleado</h5>                        
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                            <%--<span aria-hidden="true">&times;</span>
+                            </button>--%>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -104,7 +105,7 @@
         </div>            
     </asp:Panel>    
     <div class="container-fluid text-right">    
-        <asp:Button ID="btnNuevo" runat="server" Text ="Nuevo Salario del Empleado"  CssClass="btn btn-primary" />
+        <asp:Button ID="btnNuevo" runat="server" Text ="Nuevo Salario del Empleado"  CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
         <div class="mx-auto" style="height: 10px;"></div>
     </div>
     <div class="card shadow mb-4">                       

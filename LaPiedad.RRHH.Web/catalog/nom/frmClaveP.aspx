@@ -24,18 +24,17 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
     <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1"
-        BackgroundCssClass="modalBackground" TargetControlID="btnNuevo" CancelControlID="btnClose" ></ajaxToolkit:ModalPopupExtender>
+        BackgroundCssClass="modalBackground" TargetControlID="lnkDummy" CancelControlID="btnClose" ></ajaxToolkit:ModalPopupExtender>
 
     <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
         <div style="">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>                   
+                  <ContentTemplate>
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> de Clave de Pago</h5>                        
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 class="modal-title" id="exampleModalLabel5"><asp:Label ID="Label1" runat="server" Text="Alta"></asp:Label> de Clave de Pago</h5>                                                    
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -59,9 +58,7 @@
                                   </asp:DropDownList>
                                 </div>
                             </div>
-                        </div>
-                      
-                      
+                        </div>        
                         <div class="modal-footer">
                             <asp:Label ID="lblAviso" runat="server" CssClass="alert alert-danger" Visible="false"></asp:Label>
                             <asp:Button ID="btnClose" CssClass="btn btn-secondary" runat="server" Text="Cerrar" OnClick="btnClose_Click" />
@@ -74,7 +71,7 @@
         </div>            
     </asp:Panel>    
     <div class="container-fluid text-right">    
-        <asp:Button ID="btnNuevo" runat="server" Text ="Nueva clave de pago"  CssClass="btn btn-primary" />
+        <asp:Button ID="btnNuevo" runat="server" Text ="Nueva clave de pago"  CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
         <div class="mx-auto" style="height: 10px;"></div>
     </div>
     <div class="card shadow mb-4">                       

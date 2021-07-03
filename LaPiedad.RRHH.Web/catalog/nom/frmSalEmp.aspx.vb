@@ -56,15 +56,19 @@ Public Class frmSalEmp
             If hfIdAccion.Value = -1 Then
                 'alta
                 obj.Almacenar(idSuc)
-                valida = True
             Else
                 'modificacion
                 idSuc.IdSalarioSemana = hfIdAccion.Value
                 obj.Actualizar(idSuc)
-                valida = True
             End If
+
             If Not obj.HayError Then
                 ModalPopupExtender1.Hide()
+                valida = True
+            Else
+                lblAviso.Visible = True
+                lblAviso.Text = obj.MensajeError
+                ModalPopupExtender1.Show()
             End If
         Else
             lblAviso.Visible = True
@@ -79,6 +83,9 @@ Public Class frmSalEmp
     End Sub
 
     Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
+        txtAnio.Text = String.Empty
+        txtFechaCreacion.Text = String.Empty
+        txtSalario.Text = String.Empty
         ModalPopupExtender1.Show()
     End Sub
 
